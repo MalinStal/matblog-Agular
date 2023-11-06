@@ -32,3 +32,59 @@ likes: number;
 dislikes: number;
 comments: string[];
 }
+
+ ## BlogPlanering / egna tankar 
+  Detta ska bli en matblogg med lite olika recept gällande mat och bak
+
+  fölande saker ska vara med i varej recpet: 
+    title: pankaka
+    thumbnailUrl: bild på pankakor
+    aboutRecipe: Goda pankakor som ska bakas med kärlek och toppas med glas och färska jordgubbar 
+    ingredients: [mjölk, ägg, mjöl]
+    cooking: blanda alla ingredienser, stek och ät 
+    category: mat
+    currentDate: Datum: 2023-11-05
+    likes: 345 likes
+    dislikes: 0
+    comments: [bästa pannkakorna i världen, super gott!];
+
+    _Style_
+    använd tailwind för CSS 
+    loga görte i canva 
+    färgtema grönt 
+    enkelt 
+_TODO_
+
+1. skapa github repo
+status : klar
+2. skapa alla filer/componenter/services som ska vara med
+status : klar
+
+3. skapa routes 
+status : klar! 
+4. gör en header med vad som ska var med
+   - routes status : klar! 
+   - logo och bild
+   - övrig info och CSS? 
+5.  skapa blog class
+   status : klar
+
+6.  rendera ut blogs i blogs sidan
+   status : rendering fungerar bra! innehåll ej klart 
+
+7.   kunna öppna en blog om man klickar på den 
+status : klart !
+
+8.   se information om bloginläget och kunna navigera tillbaka till home
+      status : klar 
+9.   kunna gilla och ogilla varje enskild post
+
+10.  kunna lägga till en post
+
+11.lada ner tailwind CSS status :klar! 
+
+12. lada ner maticons for like button i home komponenten 
+ status :klar! men funger ej av någon anledning? 
+
+ # FORTSÄTT HÄR! 
+

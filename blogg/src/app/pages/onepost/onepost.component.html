@@ -1,0 +1,17 @@
+<p>onepost works!</p>
+{{id}}
+<div *ngIf="post">
+<h2>{{post.title}}</h2>
+<img class="" src="{{post.thumbnailUrl}}" alt="">
+<p>{{post.aboutRecipe}}</p>
+<ol *ngFor="let item of post.ingredients"><li>{{item}}</li></ol>
+<ol *ngFor="let item of post.cooking"><li>{{item}}</li></ol>
+<span>{{post.category}}</span>
+<span>{{post.currentDate}}</span>
+<button><mat-icon>thumb_up</mat-icon></button> <span>{{post.likes}}</span>
+<button><mat-icon>thumb_down</mat-icon></button><span>{{post.dislikes}}</span>
+<ol *ngFor="let item of post.comments"><li>{{item}}</li></ol>
+
+</div>
+
+<button (click)="navigateHome()">Home</button>

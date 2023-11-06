@@ -1,0 +1,9 @@
+.header {
+    background-image: src("assets/images/grönsaker.jpg");
+}
+.logo-header {
+    width: 200px;
+    height: 200px;
+    border: 1px solid rgb(19, 15, 15);
+    border-radius: 50%;
+}

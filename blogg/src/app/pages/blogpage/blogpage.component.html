@@ -1,0 +1,9 @@
+<section class="bg-emerald-300" >
+  <ul class="" *ngFor="let post of blogpost">
+    <li class="" routerLink="/post/{{post.id}}">
+      {{ post.title }}
+      <img [src]="post.thumbnailUrl" alt="" width="200" />
+      {{ post.currentDate }}
+    </li>
+  </ul>
+</section>
