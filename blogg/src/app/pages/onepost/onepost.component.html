@@ -1,5 +1,5 @@
-<div *ngIf="post" class="section-recepie">
-  <h2>{{ post.title }}</h2>
+<main *ngIf="post" class="section-recepie p-20">
+  <h2 class="text-3xl">{{ post.title }}</h2>
   <img class="" src="{{ post.thumbnailUrl }}" alt="" />
   <p>{{ post.aboutRecipe }}</p>
   <ol *ngFor="let item of post.ingredients">
@@ -10,13 +10,25 @@
   </ol>
   <span>{{ post.category }}</span>
   <span>{{ post.currentDate }}</span>
-  <button><mat-icon>thumb_up</mat-icon></button>
-  <span>{{ post.likes }}</span>
-  <button><mat-icon>thumb_down</mat-icon></button
-  ><span>{{ post.dislikes }}</span>
-  <ol *ngFor="let item of post.comments">
-    <li>{{ item }}</li>
-  </ol>
+ 
+ 
+  <section class="p-5"> 
+  <div class="">
+    <button class=""><mat-icon>thumb_up</mat-icon></button>
+    <button class="ml-5"><mat-icon>thumb_down</mat-icon></button>
+  </div>
+  <div> <span class="">{{ post.likes }}</span>
+    <span class="ml-8">{{ post.dislikes }}</span>
 </div>
+</section>
+ 
+<section> 
+  <div class="text-xl">Comments:</div>
+  <ol *ngFor="let item of post.comments">
+    <li class="p-5  bg-white mb-2 border-black" >{{ item }}</li>
+  </ol>
+</section>
+ 
 
-<button (click)="navigateHome()">Home</button>
+  <button class="cursor-pointer" (click)="navigateHome()">Back To Home</button>
+</main>

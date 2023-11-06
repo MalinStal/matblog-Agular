@@ -1,10 +1,10 @@
 <main class="bg-gradient-to-r from-lime-300 to-red-600 h-screen">
-<section class="" >
-  <ul class="" *ngFor="let post of blogpost">
-    <li class="" routerLink="/post/{{post.id}}">
-      {{ post.title }}
-      <img [src]="post.thumbnailUrl" alt="" width="200" />
-      {{ post.currentDate }}
+<section class="flex flex-col justify-center items-center bg-white" style="width: 650px; align-items: center;" >
+  <ul class="flex flec-col items-center justify-center" *ngFor="let post of blogpost">
+    <li class=" justify-center text-center" routerLink="/post/{{post.id}}">
+     <span class="text-3xl mb-8">{{ post.title }}</span> 
+      <img [src]="post.thumbnailUrl" alt="" width="500px" class=""/>
+     <span>Post Date: {{ post.currentDate }}</span> 
     </li>
   </ul>
 </section>
