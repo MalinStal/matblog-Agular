@@ -62,10 +62,13 @@ status : klar
 
 3. skapa routes 
 status : klar! 
+
 4. gör en header med vad som ska var med
-   - routes status : klar! 
-   - logo och bild
-   - övrig info och CSS? 
+   - routes 
+   status : klar! 
+   - övrig CSS 
+   status  :klar! 
+
 5.  skapa blog class
    status : klar
 
@@ -80,11 +83,19 @@ status : klart !
 9.   kunna gilla och ogilla varje enskild post
 
 10.  kunna lägga till en post
+status : bara ritat ut hur det kan se ut. Saknas functionalitet och eventuellt att det ska vara upplagrt på ett annat sätt ? fundera på saken
 
 11.lada ner tailwind CSS status :klar! 
 
 12. lada ner maticons for like button i home komponenten 
- status :klar! men funger ej av någon anledning? 
+ status :klar! men funger ej av någon anledning? nu funkar det. behövde läga en länk i index.html för att det skulle funka :) 
 
  # FORTSÄTT HÄR! 
+
+har gjort lite överallt med det värse idag så behöver börja fokusera lite till nästa sitning med blogen. 
+
+1. Gör klart utsendet i blogs sidan samt onepost 
+2. gör i ordning about sidan och skapa ett formulär där 
+3. se till att det går att läga till en post med blog klassen 
+4. 
 

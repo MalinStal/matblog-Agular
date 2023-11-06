@@ -1,11 +1,14 @@
 <header class="bg-emerald-700 flex space-x-6">
     <!-- <img class="logo-header" [src]="logo" alt=""> -->
-    <h1 class="text-3xl p-5">{{title}}</h1>
+   <h1 class="text-3xl p-5">{{title}}</h1>
     <nav class="navbar">
     <ul class="flex space-x-3.5 ">
         <li class="text-xl p-5" routerLink="">Home</li>
         <li class="text-xl  p-5" routerLink="/about">About</li>
         <li class="text-xl  p-5" routerLink="/blogs">Blogs</li>  
+        <li class="text-xl  p-5" routerLink="/addpost">Add Post</li>  
     </ul>
 </nav>
+<button (click)="adminPage()">Admin page <mat-icon>receipt</mat-icon></button>
 </header>
+ 

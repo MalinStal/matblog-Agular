@@ -12,6 +12,7 @@ import { CreatepostComponent } from './pages/createpost/createpost.component';
 import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddminhomepageComponent } from './addminhomepage/addminhomepage.component';
+import { CommentsectionComponent } from './components/commentsection/commentsection.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddminhomepageComponent } from './addminhomepage/addminhomepage.compone
     CreatepostComponent,
     FormComponent,
     HeaderComponent,
-    AddminhomepageComponent
+    AddminhomepageComponent,
+    CommentsectionComponent
   ],
   imports: [
     BrowserModule,

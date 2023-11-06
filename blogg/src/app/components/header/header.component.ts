@@ -8,4 +8,9 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
  logo : string = "assets/images/logo.png" 
  title : string = "MatBloggen"
+
+
+ adminPage() : void {
+  
+ }
 }

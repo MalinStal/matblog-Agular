@@ -1,0 +1,8 @@
+.section-recepie {
+    background-color: #04785739;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
