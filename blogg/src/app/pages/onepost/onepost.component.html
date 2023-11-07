@@ -1,34 +1,42 @@
-<main *ngIf="post" class="section-recepie p-20">
-  <h2 class="text-3xl">{{ post.title }}</h2>
-  <img class="" src="{{ post.thumbnailUrl }}" alt="" />
-  <p>{{ post.aboutRecipe }}</p>
-  <ol *ngFor="let item of post.ingredients">
-    <li>{{ item }}</li>
-  </ol>
-  <ol *ngFor="let item of post.cooking">
-    <li>{{ item }}</li>
-  </ol>
-  <span>{{ post.category }}</span>
-  <span>{{ post.currentDate }}</span>
- 
- 
-  <section class="p-5"> 
-  <div class="">
-    <button class=""><mat-icon>thumb_up</mat-icon></button>
-    <button class="ml-5"><mat-icon>thumb_down</mat-icon></button>
-  </div>
-  <div> <span class="">{{ post.likes }}</span>
-    <span class="ml-8">{{ post.dislikes }}</span>
-</div>
-</section>
- 
-<section> 
-  <div class="text-xl">Comments:</div>
-  <ol *ngFor="let item of post.comments">
-    <li class="p-5  bg-white mb-2 border-black" >{{ item }}</li>
-  </ol>
-</section>
- 
+<main *ngIf="post" class="flex flex-col justify-center items-center">
+  <section
+    class="flex flex-col justify-center items-center bg-white p-5"
+    style="width: 650px"
+  >
+    <h2 class="text-3xl p-4 mt-4">{{ post.title }}</h2>
+    <img class="" src="{{ post.thumbnailUrl }}" alt="" width="500px" />
+    <p class="text-center">{{ post.aboutRecipe }}</p>
+    <div>
+      <span class="pt-4">Ingredienser: </span>
+      <ol *ngFor="let item of post.ingredients">
+        <li>{{ item }}</li>
+      </ol>
+    </div>
+
+    <ol *ngFor="let item of post.cooking">
+      <li>{{ item }}</li>
+    </ol>
+    <span>Kategori: {{ post.category }}</span>
+    <span>Upplagt: {{ post.currentDate }}</span>
+  </section>
+
+  <section class="p-5">
+    <div class="">
+      <button class=""><mat-icon>thumb_up</mat-icon></button>
+      <button class="ml-5"><mat-icon>thumb_down</mat-icon></button>
+    </div>
+    <div>
+      <span class="">{{ post.likes }}</span>
+      <span class="ml-8">{{ post.dislikes }}</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="text-xl">Comments:</div>
+    <ol *ngFor="let item of post.comments">
+      <li class="p-5 bg-white mb-2 border-black">{{ item }}</li>
+    </ol>
+  </section>
 
   <button class="cursor-pointer" (click)="navigateHome()">Back To Home</button>
 </main>

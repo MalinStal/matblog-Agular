@@ -1,8 +1,8 @@
-<main class="bg-gradient-to-r from-lime-300 to-red-600 h-screen">
-<section class="flex flex-col justify-center items-center bg-white" style="width: 650px; align-items: center;" >
-  <ul class="flex flec-col items-center justify-center" *ngFor="let post of blogpost">
-    <li class=" justify-center text-center" routerLink="/post/{{post.id}}">
-     <span class="text-3xl mb-8">{{ post.title }}</span> 
+<main class="flex flex-col justify-center items-center">
+<section class=" p-3 bg-white" style="width: 650px;" >
+  <ul class="flex flec-col items-center justify-center p-3" *ngFor="let post of blogpost">
+    <li class=" justify-center text-center p-5 bg-slate-100 shadow-lg"  routerLink="/post/{{post.id}}">
+     <div class="text-3xl p-2 mb-2">{{ post.title }}</div> 
       <img [src]="post.thumbnailUrl" alt="" width="500px" class=""/>
      <span>Post Date: {{ post.currentDate }}</span> 
     </li>
