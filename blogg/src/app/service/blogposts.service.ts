@@ -7,7 +7,11 @@ import { CommentsService } from './comments.service';
   providedIn: 'root',
 })
 export class BlogpostsService {
+  categorys : string[] = ["mat","bak"]
+  BakCategorys : string[] = ["tårta", "kaka", "bulle", "bröd", "efterrätt"]
+  MatCategorys : string[] = ["soppa", "gryta", "pastarätt", "huvudrätt", "förrätt", "picknick"]
 
+  hideimg : boolean = false;
   constructor(private dateService : DateService, private commentService : CommentsService) {
 
   }
@@ -33,15 +37,17 @@ export class BlogpostsService {
       'Dela äggen i gulor och vitor. Vispa äggulor, socker och vaniljpulver pösigt i en bunke. Rör ner färskosten.',
       'Vispa grädden löst. Vispa vitorna till ett hårt skum. Vänd först ner grädden och sedan vitorna försiktigt i färskostsmeten. Häll smeten i formen. Täck med plastfilm och låt stå i frys minst 4 tim.',
       'Ta ut cheesecaken ca 15 min innan servering. Garnera med hallon och blad från citronmeliss.' ],
-      'bak',
+      this.categorys[1],
+      this.BakCategorys[0],
       this.randomDate,
       this.likes, 
       this.disLikes,
      
       [
         'super gott recept',
-        'helt fantastiuskt!, la även till lite ciron',
-        'helt fantastiuskt!, la även till lite ciron',
+        'helt fantastiskt!, la även till lite citron',
+         "älskar cheesecake"
+     
       ]
     ),
     new Blogs(
@@ -79,11 +85,12 @@ export class BlogpostsService {
       '9. Vik ihop degen ovanpå fyllningen.',
       '10. Lägg pirogerna på en bakplåtspappersklädd plåt och låt jäsa i 15 minuter. Sätt ugnen på 225 grader.',
       '11. Baka mitt i ugnen i 13-15 minuter tills de har fått fin färg.'],
-      'mat',
+      this.categorys[0],
+      this.MatCategorys[5],
       this.randomDate,
       this.likes + 123, 
       this.disLikes,
-      ['super gott recept', 'helt fantastiskt!, la även till lite citron']
+      ['super gott recept', 'helt fantastiskt!', "bättre än klassiska piroger"]
     ),
     new Blogs(
       4, 
@@ -101,11 +108,12 @@ export class BlogpostsService {
       '2 dl crème fraîche',
       '1 dl matlagningsgrädde',],
       ['1. Finhacka gul lök och fräs i kastrull med smör och vitlök.', '2. Skala pumpan och gröp ur kärnorna (spara dem till att rosta). Skär pumpan i mindre bitar.', '3. Tillsätt pumpaskivorna i kastrullen och stek under omrörning. Rör ner grönsaksfond, kryddor och vatten och  låt koka i cirka 20 minuter.','4. Ha i crème fraîche och matlagningsgrädde och mixa slätt med stavmixer. Servera med en bit bröd!'],
-      'mat',
+      this.categorys[0],
+      this.MatCategorys[5],
       this.randomDate,
       this.likes + 334, 
       this.disLikes,
-      ['super gott recept', 'helt fantastiskt!, la även till lite ingefära']
+      ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa höst rätten"]
     ),
   ];
 

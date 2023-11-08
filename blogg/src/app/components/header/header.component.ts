@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +8,11 @@ import { Component } from '@angular/core';
 export class HeaderComponent {
  logo : string = "assets/images/logo.png" 
  title : string = "MatBloggen"
+hide  :boolean = false;
 
 
- adminPage() : void {
-  
+ changeToAdmin() : void {
+  this.hide = !this.hide
+  console.log(this.hide)
  }
 }

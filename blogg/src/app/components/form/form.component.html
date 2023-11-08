@@ -1,18 +1,19 @@
-<section class="flex flex-col">
-  <h3 class="text-3xl">Contact form</h3>
+<section  >
+  <form class="flex flex-col text-center bg-slate-100 p-6 ">
+     <h3 class="text-3xl">Contact form</h3>
   <label for="">Namn</label>
-  <input type="text" /> <label for="">Email</label> <input type="email" /><label
-    for=""
-    >number</label
-  >
-  <input type="text" />
-
+  <input type="text" placeholder="Namn" /> 
+  <label for="">Email</label> 
+  <input type="email" placeholder="Email" class="mb-5" />
   <textarea
     name=""
     id=""
     cols="30"
     rows="10"
-    placeholder="write your message here..."
+    placeholder={{message}}
+    class="text-start mb-3"
   ></textarea>
   <button>Send</button>
+  </form>
+ 
 </section>

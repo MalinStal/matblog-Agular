@@ -6,17 +6,17 @@
     <h2 class="text-3xl p-4 mt-4">{{ post.title }}</h2>
     <img class="" src="{{ post.thumbnailUrl }}" alt="" width="500px" />
     <p class="text-center">{{ post.aboutRecipe }}</p>
-    <div>
-      <span class="pt-4">Ingredienser: </span>
-      <ol *ngFor="let item of post.ingredients">
+    <div class="m-5" > <span class="pb-4">Ingredienser: </span>
+      <ol  *ngFor="let item of post.ingredients">
         <li>{{ item }}</li>
-      </ol>
-    </div>
+      </ol></div>
+    
+   
 
-    <ol *ngFor="let item of post.cooking">
+    <ol class="text-center" *ngFor="let item of post.cooking">
       <li>{{ item }}</li>
     </ol>
-    <span>Kategori: {{ post.category }}</span>
+    <span>Kategori: {{ post.category }}, {{ post.subCategory }}</span>
     <span>Upplagt: {{ post.currentDate }}</span>
   </section>
 

@@ -7,7 +7,8 @@ export class Blogs {
     ingredients: string[];
     cooking: string[];
     category: string;
-   currentDate: any; //this.dateService.getDate(); //date
+    subCategory : string;
+   currentDate: any; 
     likes: number;
     dislikes: number;
     comments: string[];
@@ -19,6 +20,7 @@ export class Blogs {
         ingredients: string[],
         cooking: string[],
         category: string,
+        subCategory : string,
         currentDate: any,
         likes: number,
         dislikes: number,
@@ -32,6 +34,7 @@ export class Blogs {
         this.ingredients = ingredients;
         this.cooking = cooking;
         this.category = category;
+        this.subCategory = subCategory;
         this.currentDate= currentDate;
         this.likes = likes;
         this.dislikes = dislikes;

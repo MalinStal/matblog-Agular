@@ -6,5 +6,5 @@ import { Component } from '@angular/core';
   styleUrls: ['./form.component.css']
 })
 export class FormComponent {
-
+message : string = "skriv ditt meddelande här..."
 }
