@@ -13,7 +13,7 @@ import { FormComponent } from './components/form/form.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AddminhomepageComponent } from './addminhomepage/addminhomepage.component';
 import { CommentsectionComponent } from './components/commentsection/commentsection.component';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
