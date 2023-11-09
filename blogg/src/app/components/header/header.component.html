@@ -1,15 +1,16 @@
-<header class="bg-emerald-700 flex space-x-6">
-  
-   <h1 class="text-3xl p-5">{{title}}</h1>
-    <nav class="navbar">
-    <ul class="flex space-x-3.5 ">
-        <li class="text-xl p-5 cursor-pointer" routerLink="">Home</li>
-        <li class="text-xl  p-5 cursor-pointer" routerLink="/about">About</li>
-        <li class="text-xl  p-5 cursor-pointer" routerLink="/blogs">Blogs</li>  
+<header class="bg-emerald-700 flex justify-between text-white items-center">
+<app-loga></app-loga>
+   <!-- <h1 class="text-2xl">{{title}}</h1> -->
+   
+    <nav class=" flex">
+    <ul class="flex space-x-3.5 text-center ">
+        <li class="text-xl p-5 cursor-pointer hover:scale-125 ease-out duration-300" routerLink="">Home</li>
+        <li class="text-xl  p-5 cursor-pointer hover:scale-125 ease-out duration-300" routerLink="/about">About</li>
+        <li class="text-xl  p-5 cursor-pointer hover:scale-125 ease-out duration-300" routerLink="/blogs">Blogs</li>  
         <li *ngIf="hide == true" class="text-xl  p-5 cursor-pointer" routerLink="/addpost">Add Post</li>  
     </ul>
 </nav>
-<button (click)="changeToAdmin()" *ngIf="hide == false; else userPage"> 
+<button class="justify-end items-end" (click)="changeToAdmin()" *ngIf="hide == false; else userPage"> 
     <span>Admin page</span> 
      <mat-icon>receipt</mat-icon></button>
      

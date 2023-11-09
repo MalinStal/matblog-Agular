@@ -67,13 +67,15 @@ status : klar!
    - routes 
    status : klar! 
    - övrig CSS 
-   status  :klar! 
+   status  :klar!
+   - lägg till logo 
+   status : klar 
 
 5.  skapa blog class
    status : klar
 
 6.  rendera ut blogs i blogs sidan
-   status : rendering fungerar bra! innehåll ej klart 
+   status : rendering fungerar bra!
 
 7.   kunna öppna en blog om man klickar på den 
 status : klart !
@@ -88,14 +90,20 @@ status : bara ritat ut hur det kan se ut. Saknas functionalitet och eventuellt a
 11.lada ner tailwind CSS status :klar! 
 
 12. lada ner maticons for like button i home komponenten 
- status :klar! men funger ej av någon anledning? nu funkar det. behövde läga en länk i index.html för att det skulle funka :) 
+ status :klar! men funger ej av någon anledning? nu funkar det. behövde läga en länk i index.html för att det skulle funka
+
+ 13.skapa kontakt formulär till about sidan som ska rendera ut meddeladnet i consolen.
+ status : klar
+
+14. se över all kod så att det som är på hemsidan står på svenska! 
+
+15.skapa funktionalitet till createPost med formGroup och puscha till listan  i blogs.
+
+16.skapa localstorage service och se till att alla blogs sparas 
+
+17.skriv om koden till mindre komponenter, framförallt blogsidan, få till att använda input och output. skapa gänra en toway bidning om tid finns 
 
  # FORTSÄTT HÄR! 
 
-har gjort lite överallt med det värse idag så behöver börja fokusera lite till nästa sitning med blogen. 
 
-1. Gör klart utsendet i blogs sidan samt onepost 
-2. gör i ordning about sidan och skapa ett formulär där 
-3. se till att det går att läga till en post med blog klassen 
-4. 
 

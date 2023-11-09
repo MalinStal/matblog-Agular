@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -8,11 +9,12 @@ import { Component, Input } from '@angular/core';
 export class HeaderComponent {
  logo : string = "assets/images/logo.png" 
  title : string = "MatBloggen"
-hide  :boolean = false;
+ hide  :boolean = false;
 
+constructor(private route : Router){}
 
  changeToAdmin() : void {
   this.hide = !this.hide
-  console.log(this.hide)
+  this.route.navigate(["/"])
  }
 }

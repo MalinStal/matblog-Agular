@@ -1,17 +1,18 @@
 <section  >
-  <form class="flex flex-col text-center bg-slate-100 p-6 ">
+  <form class="flex flex-col text-center bg-slate-100 p-6 " [formGroup]="formSet" (ngSubmit)="saveMessage()" >
      <h3 class="text-3xl">Contact form</h3>
   <label for="">Namn</label>
-  <input type="text" placeholder="Namn" /> 
+  <input type="text" placeholder="Namn" formControlName="name" /> 
   <label for="">Email</label> 
-  <input type="email" placeholder="Email" class="mb-5" />
+  <input type="email" placeholder="Email" class="mb-5" formControlName="email" />
   <textarea
     name=""
     id=""
     cols="30"
     rows="10"
-    placeholder={{message}}
+    placeholder={{textMessage}}
     class="text-start mb-3"
+    formControlName="message"
   ></textarea>
   <button>Send</button>
   </form>

@@ -14,6 +14,8 @@ import { HeaderComponent } from './components/header/header.component';
 import { AddminhomepageComponent } from './addminhomepage/addminhomepage.component';
 import { CommentsectionComponent } from './components/commentsection/commentsection.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { ModalComponent } from './components/modal/modal.component';
+import { LogaComponent } from './components/loga/loga.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,9 @@ import { FooterComponent } from './components/footer/footer.component';
     HeaderComponent,
     AddminhomepageComponent,
     CommentsectionComponent,
-    FooterComponent
+    FooterComponent,
+    ModalComponent,
+    LogaComponent
   ],
   imports: [
     BrowserModule,
