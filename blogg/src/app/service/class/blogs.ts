@@ -4,8 +4,8 @@ export class Blogs {
     title: string;
     thumbnailUrl: string;
     aboutRecipe: string;
-    ingredients: string[];
-    cooking: string[];
+    ingredientsList:any[];
+    cooking: any[];
     category: string;
     subCategory : string;
    currentDate: any; 
@@ -17,8 +17,8 @@ export class Blogs {
         title: string,
         thumbnailUrl: string,
         aboutRecipe: string,
-        ingredients: string[],
-        cooking: string[],
+        ingredientsList:any[],
+        cooking: any[],
         category: string,
         subCategory : string,
         currentDate: any,
@@ -31,7 +31,7 @@ export class Blogs {
         this.title = title;
         this.thumbnailUrl = thumbnailUrl;
         this.aboutRecipe = aboutRecipe;
-        this.ingredients = ingredients;
+        this.ingredientsList = ingredientsList;
         this.cooking = cooking;
         this.category = category;
         this.subCategory = subCategory;
@@ -42,3 +42,7 @@ export class Blogs {
     }
 }
  
+interface ingrediens{
+    measure : number;
+    ingredient : any;
+}
