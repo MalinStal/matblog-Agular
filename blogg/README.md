@@ -96,13 +96,18 @@ status : bara ritat ut hur det kan se ut. Saknas functionalitet och eventuellt a
  status : klar
 
 14. se över all kod så att det som är på hemsidan står på svenska! 
- # FORTSÄTT HÄR! 
+ status pågår!
 
 15.skapa funktionalitet till createPost med formGroup och puscha till listan  i blogs.
+status klar!
+# FORTSÄTT HÄR! 
+16.skapa localstorage service och se till att alla blogs sparas.
 
-16.skapa localstorage service och se till att alla blogs sparas 
+17. se till att man kan gilla och läga till nya kommentarer
 
-17.skriv om koden till mindre komponenter, framförallt blogsidan, få till att använda input och output. skapa gänra en toway bidning om tid finns. När du gör detta se till att starta en ny branch du kan göra det i för övning
+18.gör de möjligt att lägga till bild i blogg posten
+
+19.skriv om koden till mindre komponenter, framförallt blogsidan, få till att använda input och output. skapa gänra en toway bidning om tid finns. När du gör detta se till att starta en ny branch du kan göra det i.
 
 
 

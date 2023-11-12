@@ -23,13 +23,13 @@
 
             <input type="text" formControlName="measure" />
             <input type="text" formControlName="ingredient" />
-            <button (click)="removeIngredient(i)">remove</button>
+            <button (click)="removeItem(this.listOfIngredients, i)">remove</button>
           </div>
         </div>
       </div>
     </div>
-    <button type="button" (click)="addIngredient()">
-      lägg till ingredients</button
+    <button type="button" (click)="addItem(this.listOfIngredients, this.newIngredient())">
+      lägg till fler ingredienser</button
     ><br />
 
     <div>
@@ -40,12 +40,12 @@
 
             <input type="text" formControlName="steps" />
 
-            <button (click)="removeCooking(i)">remove</button>
+            <button (click)="removeItem(this.listOfCooking, i)">remove</button>
           </div>
         </div>
       </div>
     </div>
-    <button type="button" (click)="addCooking()">lägg till instruktion</button
+    <button type="button" (click)="addItem(this.listOfCooking, this.newCooking())">lägg till instruktion</button
     ><br />
 
     <select name="" id="" formControlName="category">

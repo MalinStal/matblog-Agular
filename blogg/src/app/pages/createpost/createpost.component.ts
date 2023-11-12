@@ -3,6 +3,7 @@ import { FormArray, FormControl, FormGroup, FormBuilder, Validators } from '@ang
 import { BlogpostsService } from 'src/app/service/blogposts.service';
 import { Blogs } from 'src/app/service/class/blogs';
 import { DateService } from 'src/app/service/date.service';
+import { LocalstorageService } from 'src/app/service/localstorage.service';
 
 @Component({
   selector: 'app-createpost',
@@ -23,7 +24,7 @@ export class CreatepostComponent {
  //this have ti be done inside the constructor block. 
 
   addRecipe : FormGroup;
-  constructor(private blogpostService : BlogpostsService, private fb : FormBuilder, private dateService: DateService) {
+  constructor(private blogpostService : BlogpostsService, private fb : FormBuilder, private dateService: DateService, private localstorageService : LocalstorageService) {
     
     this.addRecipe = this.fb.group({
       id : Math.floor(Math.random() * 100),
@@ -56,14 +57,9 @@ export class CreatepostComponent {
         ingredient: '',
       })
     }
-    addIngredient() {
-      this.listOfIngredients.push(this.newIngredient())
-      console.log(this.addRecipe.value);
-    }
-    removeIngredient(i : number) {
-      this.listOfIngredients.removeAt(i)
-    }
-
+    // localStorage(key : string, items : any){
+    //   this.localstorageService.addToLocalStorage(key, items)
+    // }
     get listOfCooking() : FormArray {
       return this.addRecipe.get("cooking") as FormArray
     }
@@ -72,16 +68,17 @@ export class CreatepostComponent {
        steps: "",
       })
     }
-    addCooking() {
-      this.listOfCooking.push(this.newCooking())
+    addItem(list : any, item :any) {
+      list.push(item)
       console.log(this.addRecipe.value);
     }
-    removeCooking(i : number) {
-      this.listOfCooking.removeAt(i)
+    removeItem( list : any, i : number) {
+      list.removeAt(i)
     }
     onSubmit() {
       console.log(this.addRecipe.value);
       this.list.unshift(this.addRecipe.value as Blogs)
+     // this.localStorage("recipe", this.addRecipe.value)
       
 
     }
