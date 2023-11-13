@@ -38,7 +38,7 @@ export class CreatepostComponent {
     currentDate: this.dateService.getDate(),
     likes: 0,
     dislikes: 0,
-    Comments : [],
+    Comments : this.fb.array([""]),
 
       
     });

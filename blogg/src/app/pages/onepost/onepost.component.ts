@@ -49,10 +49,16 @@ this.route.navigate(["/"])
   } 
 return this.post.dislikes -= 1;
  }
+
+ newCommentList : any[] = [];
  addComment(value : string) {
-  this.post?.comments.unshift(value)
+  
+    this.post?.comments.unshift(value)
   this.newComment = "";
+
+
  }
+
  indexet(i : number) : number {
   let index = i + 1
   return index

@@ -104,11 +104,15 @@ status klar!
 16.skapa localstorage service och se till att alla blogs sparas.
 status : klar !
 
-# FORTSÄTT HÄR! 
+
 17. se till att man kan gilla och lägga till nya kommentarer
 
 status : nästan klart , kan lägga till kommetnarer och gilla men det uppdateras inte/sparas inte i local storage 
+
+# FORTSÄTT HÄR! 
 18.gör de möjligt att lägga till bild i blogg posten
+   - lägg in med URL status : klar! 
+   - lägg in med input type file status : provar mig fram men har nu viktigare saker att preoritera
 
 19.skriv om koden till mindre komponenter
    - create post : här vill jag få en service för all funktionalitet samt mindre komponenter och mer återanvänding i koden.   
@@ -120,8 +124,10 @@ status : nästan klart , kan lägga till kommetnarer och gilla men det uppdatera
 
 
 
-## buggar att fixa 
+## buggar/saker att fixa 
 
-- när man lägger till nya grejr i createpost så förstoras inte formuläret utan saker läger sig utanför diven och under footern
-- blir ett sträck som att man skulle kunna skriva något i header länkarna 
+- när man lägger till nya grejer i createpost så förstoras inte formuläret utan saker läger sig utanför diven och under footern
+- blir ett sträck som att man skulle kunna skriva något i header länkarna lite random på isdan ibland ??
 - laggar om man försöker göra en output till logo komponenten för routing 
+- går ej att skriva commentarer i nya blogpost... behöver kanske göra om till en formarray som ingredienserna eller något liknande?? 
+
