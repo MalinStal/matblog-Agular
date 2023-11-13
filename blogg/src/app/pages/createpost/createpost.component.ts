@@ -36,18 +36,15 @@ export class CreatepostComponent {
     category: new FormControl(''),
     subCategory: new FormControl(''),
     currentDate: this.dateService.getDate(),
-    likes: 30,
+    likes: 0,
     dislikes: 0,
     Comments : [],
 
       
     });
-    
-//håller på med att lösa så man kan läga till ingrediens listan och rendera den i varje blog post 
-//något där som inte funkar men kan vara att vi gjort om den til len lista som vi också 
-//måste göra i själva klassen. kolla vidare på detta! 
-
+  
   }
+
   get listOfIngredients() : FormArray {
       return this.addRecipe.get("ingredientsList") as FormArray
     }
@@ -57,9 +54,7 @@ export class CreatepostComponent {
         ingredient: '',
       })
     }
-    // localStorage(key : string, items : any){
-    //   this.localstorageService.addToLocalStorage(key, items)
-    // }
+  
     get listOfCooking() : FormArray {
       return this.addRecipe.get("cooking") as FormArray
     }
@@ -68,6 +63,7 @@ export class CreatepostComponent {
        steps: "",
       })
     }
+    
     addItem(list : any, item :any) {
       list.push(item)
       console.log(this.addRecipe.value);
@@ -76,9 +72,10 @@ export class CreatepostComponent {
       list.removeAt(i)
     }
     onSubmit() {
-      console.log(this.addRecipe.value);
-      this.list.unshift(this.addRecipe.value as Blogs)
-     // this.localStorage("recipe", this.addRecipe.value)
+      let formValue = this.addRecipe.value
+      console.log(formValue);
+      this.list.unshift(formValue as Blogs)
+      this.localstorageService.SavePost(this.list)
       
 
     }

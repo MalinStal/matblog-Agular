@@ -17,4 +17,8 @@ constructor(private route : Router){}
   this.hide = !this.hide
   this.route.navigate(["/"])
  }
+
+ navigateHome() {
+this.route.navigate(["/"])
+ }
 }

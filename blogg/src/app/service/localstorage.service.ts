@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Blogs } from './class/blogs';
 
 @Injectable({
   providedIn: 'root',
@@ -6,14 +7,18 @@ import { Injectable } from '@angular/core';
 export class LocalstorageService {
   constructor() {}
 
-  getFromLocalStorage(id: string) {
-    localStorage.getItem(id);
+  getAllPost() {
+   let allPost = localStorage.getItem("post");
+   return allPost ? JSON.parse(allPost) : null;
   }
 
-  addToLocalStorage(id: string, item: any) {
-    localStorage.setItem(id, JSON.stringify(item));
+  SavePost( item: Blogs[]) : void{
+    localStorage.setItem("post", JSON.stringify(item));
   }
-  removeFromLocalStorage(id: string) {
+  removePost(id: string) {
     localStorage.removeItem(id);
+  }
+  updatePost() {
+
   }
 }

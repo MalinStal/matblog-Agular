@@ -8,11 +8,11 @@ import { AddminhomepageComponent } from './addminhomepage/addminhomepage.compone
 import { OnepostComponent } from './pages/onepost/onepost.component';
 
 const routes: Routes = [
-  {path: "addpost", component : HomeComponent},
+  {path: "", component : HomeComponent},
   {path: "blogs", component : BlogpageComponent},
   {path: "about", component : AboutmeComponent},
   {path: "post/:id", component : OnepostComponent},
-  {path: "", component : CreatepostComponent},
+  {path: "addpost", component : CreatepostComponent},
   {path: "admin", component : AddminhomepageComponent},
 
 ];

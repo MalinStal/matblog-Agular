@@ -1,32 +1,27 @@
 import { Injectable } from '@angular/core';
 import { Blogs } from './class/blogs';
 import { DateService } from './date.service';
-import { CommentsService } from './comments.service';
+
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogpostsService {
   categorys : string[] = ["mat","bak"]
-  BakCategorys : string[] = ["tårta", "kaka", "bulle", "bröd", "efterrätt"]
-  MatCategorys : string[] = ["soppa", "gryta", "pastarätt", "huvudrätt", "förrätt", "picknick"]
+  BakCategorys : string[] = ["tårta", "kaka", "bulle", "bröd", "efterrätt", "övrigt"]
+  MatCategorys : string[] = ["soppa", "gryta", "pastarätt", "huvudrätt", "förrätt", "picknick", "frukost"]
 
   hideimg : boolean = false;
-  constructor(private dateService : DateService, private commentService : CommentsService) {
-
-  }
-  get likes() {
-    return this.commentService._likes
-  }
-  get disLikes() {
-    return this.commentService._disLikes
-  }
+  constructor(private dateService : DateService, ) {}
+  
+  // generate a date for the blogs by random
   get randomDate(){
     return this.dateService.generateRandomDate(
       new Date(2023, 0, 1),
       new Date(),
     ).toLocaleDateString()
   }
+
   blogPostList: Blogs[] = [
     new Blogs(1,
       'cheesecake',
@@ -40,8 +35,8 @@ export class BlogpostsService {
       this.categorys[1],
       this.BakCategorys[0],
       this.randomDate,
-      this.likes, 
-      this.disLikes,
+      46, 
+      0,
      
       [
         'super gott recept',
@@ -88,8 +83,8 @@ export class BlogpostsService {
       this.categorys[0],
       this.MatCategorys[5],
       this.randomDate,
-      this.likes + 123, 
-      this.disLikes,
+      123, 
+      0,
       ['super gott recept', 'helt fantastiskt!', "bättre än klassiska piroger"]
     ),
     new Blogs(
@@ -111,8 +106,8 @@ export class BlogpostsService {
       this.categorys[0],
       this.MatCategorys[5],
       this.randomDate,
-      this.likes + 334, 
-      this.disLikes,
+      334, 
+      0,
       ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa höst rätten"]
     ),
   ];

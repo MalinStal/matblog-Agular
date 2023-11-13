@@ -100,14 +100,28 @@ status : bara ritat ut hur det kan se ut. Saknas functionalitet och eventuellt a
 
 15.skapa funktionalitet till createPost med formGroup och puscha till listan  i blogs.
 status klar!
-# FORTSÄTT HÄR! 
+
 16.skapa localstorage service och se till att alla blogs sparas.
+status : klar !
 
-17. se till att man kan gilla och läga till nya kommentarer
+# FORTSÄTT HÄR! 
+17. se till att man kan gilla och lägga till nya kommentarer
 
+status : nästan klart , kan lägga till kommetnarer och gilla men det uppdateras inte/sparas inte i local storage 
 18.gör de möjligt att lägga till bild i blogg posten
 
-19.skriv om koden till mindre komponenter, framförallt blogsidan, få till att använda input och output. skapa gänra en toway bidning om tid finns. När du gör detta se till att starta en ny branch du kan göra det i.
+19.skriv om koden till mindre komponenter
+   - create post : här vill jag få en service för all funktionalitet samt mindre komponenter och mer återanvänding i koden.   
+   - one post : mindre kompoenenter
+
+20. Om tid finns skapa en remove knap till admin blog sidan som gör det möjligt att ta bort en post. använd samma boolean som i header addpost knappen. 
+
+21. Om tid finns vill jag ha snyggare/ mer användar vänlig design på sidan, gärna mer grids tänk och öva det med tailwind cssen . 
 
 
 
+## buggar att fixa 
+
+- när man lägger till nya grejr i createpost så förstoras inte formuläret utan saker läger sig utanför diven och under footern
+- blir ett sträck som att man skulle kunna skriva något i header länkarna 
+- laggar om man försöker göra en output till logo komponenten för routing 

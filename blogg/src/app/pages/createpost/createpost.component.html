@@ -2,7 +2,7 @@
   <form
     [formGroup]="addRecipe"
     (ngSubmit)="onSubmit()"
-    class="bg-slate-100 flex flex-col items-center mt-10"
+    class="bg-slate-100 flex flex-col items-center m-10 min-h-fit "
     style="width: 650px; height: 650px"
   >
     <label for="" class="mt-10"> Add a title</label>
@@ -16,7 +16,7 @@
       formControlName="aboutRecipe"
     ></textarea>
     <div>
-      <div formArrayName="ingredientsList">
+      <div formArrayName="ingredientsList" class="flex- flex-col">
         <div *ngFor="let item of listOfIngredients.controls; let i = index">
           <div [formGroupName]="i">
             ingredient name :
