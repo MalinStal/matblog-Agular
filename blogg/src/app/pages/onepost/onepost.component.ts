@@ -41,7 +41,7 @@ this.route.navigate(["/"])
   
 }
 
- 
+
  }
  disLike(){
   if(this.post == undefined){
@@ -53,5 +53,8 @@ return this.post.dislikes -= 1;
   this.post?.comments.unshift(value)
   this.newComment = "";
  }
-
+ indexet(i : number) : number {
+  let index = i + 1
+  return index
+ }
 }

@@ -63,7 +63,7 @@ export class CreatepostComponent {
        steps: "",
       })
     }
-    
+
     addItem(list : any, item :any) {
       list.push(item)
       console.log(this.addRecipe.value);
@@ -75,11 +75,24 @@ export class CreatepostComponent {
       let formValue = this.addRecipe.value
       console.log(formValue);
       this.list.unshift(formValue as Blogs)
+      this.addRecipe.reset()
       this.localstorageService.SavePost(this.list)
-      
-
     }
 
-  
-
+    // koden nedanför va till en evenutell filhantering av bilder med input type file men funkade inte 
+    // url : any = ""
+    // file(event : any) {
+    //   if(!event.target.file[0] || event.target.file[0].length == 0){
+    //     return;
+    //   }
+    //   let mimetype = event.target.file[0].type;
+    //   if(mimetype.match(/assets/) == null){
+    //     return
+    //   }
+    //   let reader = new FileReader();
+    //   reader.readAsDataURL(event.target.files[0])
+    //   reader.onload = (_event) => {
+    //     this.url = reader.result;
+    //   }
+    // }
 }

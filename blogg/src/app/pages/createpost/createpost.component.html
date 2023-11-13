@@ -2,7 +2,7 @@
   <form
     [formGroup]="addRecipe"
     (ngSubmit)="onSubmit()"
-    class="bg-slate-100 flex flex-col items-center m-10 min-h-fit "
+    class="bg-slate-100 flex flex-col items-center m-10 min-h-fit  h-2"
     style="width: 650px; height: 650px"
   >
     <label for="" class="mt-10"> Add a title</label>
@@ -16,14 +16,13 @@
       formControlName="aboutRecipe"
     ></textarea>
     <div>
-      <div formArrayName="ingredientsList" class="flex- flex-col">
-        <div *ngFor="let item of listOfIngredients.controls; let i = index">
-          <div [formGroupName]="i">
-            ingredient name :
-
-            <input type="text" formControlName="measure" />
-            <input type="text" formControlName="ingredient" />
-            <button (click)="removeItem(this.listOfIngredients, i)">remove</button>
+      <div formArrayName="ingredientsList" class="flex flex-wrap">
+        <div *ngFor="let item of listOfIngredients.controls; let i = index" >
+          <div [formGroupName]="i" >
+            <div class="flex flex-col">
+            mängd och mått enhet: <input type="text" formControlName="measure" />
+            ingrediens : <input type="text" formControlName="ingredient" />
+            <button (click)="removeItem(this.listOfIngredients, i)">remove</button></div>
           </div>
         </div>
       </div>
@@ -65,7 +64,9 @@
         </option>
       </select>
     </div>
-    <div>läg till 1 bild </div>
+    <div>läg till 1 bild 
+      <input type="text" formControlName="thumbnailUrl" placeholder="ladda upp en URL länk">
+    </div>
     <button>Add new recipe</button>
   </form>
 </main>
