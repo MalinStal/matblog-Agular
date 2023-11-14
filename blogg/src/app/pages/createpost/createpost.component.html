@@ -1,10 +1,11 @@
-<main class="bg-white flex justify-center">
+<main class="flex justify-center">
   <form
     [formGroup]="addRecipe"
     (ngSubmit)="onSubmit()"
-    class="bg-slate-100 flex flex-col items-center m-10 min-h-fit  h-2"
-    style="width: 650px; height: 650px"
+    class="grid grid-cols-2 gap-4"
+    
   >
+  <div class="col-span-1">
     <label for="" class="mt-10"> Add a title</label>
     <input type="text" formControlName="title" formControlName="title" />
     <label for=""> Add recipe description</label>
@@ -15,11 +16,12 @@
       rows="10"
       formControlName="aboutRecipe"
     ></textarea>
-    <div>
+  </div>
+    <div class="col-span-2 ">
       <div formArrayName="ingredientsList" class="flex flex-wrap">
         <div *ngFor="let item of listOfIngredients.controls; let i = index" >
           <div [formGroupName]="i" >
-            <div class="flex flex-col">
+            <div class="flex flex-col p-2">
             mängd och mått enhet: <input type="text" formControlName="measure" />
             ingrediens : <input type="text" formControlName="ingredient" />
             <button (click)="removeItem(this.listOfIngredients, i)">remove</button></div>
@@ -27,17 +29,17 @@
         </div>
       </div>
     </div>
-    <button type="button" (click)="addItem(this.listOfIngredients, this.newIngredient())">
+    <button class="col-span-2" type="button" (click)="addItem(this.listOfIngredients, this.newIngredient())">
       lägg till fler ingredienser</button
     ><br />
 
-    <div>
+    <div class="col-span-2 ">
       <div formArrayName="cooking">
         <div *ngFor="let item of listOfCooking.controls; let i = index">
           <div [formGroupName]="i">
             steg för steg
 
-            <input type="text" formControlName="steps" />
+            <input type="text" formControlName="steps" class="w-60"/>
 
             <button (click)="removeItem(this.listOfCooking, i)">remove</button>
           </div>
@@ -46,7 +48,7 @@
     </div>
     <button type="button" (click)="addItem(this.listOfCooking, this.newCooking())">lägg till instruktion</button
     ><br />
-
+<div class="grid-span-1">
     <select name="" id="" formControlName="category">
       <option value=""></option>
       <option *ngFor="let item of category; let i = index" value="{{ item }}">
@@ -54,7 +56,7 @@
       </option>
     </select>
 
-    <div>
+    
       <select name="" formControlName="subCategory" *ngIf="category[0]">
         <option *ngFor="let item of matCategory" value="{{ item }}">
           {{ item }}

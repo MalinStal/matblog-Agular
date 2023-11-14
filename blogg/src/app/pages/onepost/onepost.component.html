@@ -29,40 +29,18 @@
   </section>
 
   <section class="felx felx-col text-white text-center">
-    <section class="p-5">
-      <div class="">
-        <button class="" (click)="like()"><mat-icon>thumb_up</mat-icon></button>
-        <button class="ml-5" (click)="disLike()">
-          <mat-icon>thumb_down</mat-icon>
-        </button>
-      </div>
-      <div>
-        <span class="">{{ post.likes }}</span>
-        <span class="ml-8">{{ post.dislikes }}</span>
-      </div>
-    </section>
-    <section class="flex flex-col gap-2">
-      <label for=""> Skriv gärna en kommentar</label>
-      <input
-        type="text"
-        name="newComment"
-        placeholder="kommentar"
-        required
-        
-        [(ngModel)]="newComment"
-        class="required:border-red-500 p-2 text-black"
-      />
-      <button (click)="addComment(newComment)">lägg till</button>
-    </section>
-    <section>
-      <div class="text-xl">Comments:</div>
-      <ol *ngFor="let item of post.comments">
-        <li class="p-5 bg-white mb-2 border-black text-black">{{ item }}</li>
-      </ol>
-    </section>
-
-    <button class="cursor-pointer mb-5" (click)="navigateHome()">
+    <commentsection
+      [addNewComment]="newComment"
+      (Comment)="addComment()"
+      [post]="post"
+      (like)="like()"
+      (disLike)="disLike()"
+    ></commentsection>
+    <app-button
+    (onclick)="navigateHome()">
       Back To Home
-    </button>
+    </app-button>
+   
   </section>
 </main>
+<div *ngIf="!post">Post was not found!</div>

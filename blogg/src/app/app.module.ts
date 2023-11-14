@@ -16,6 +16,9 @@ import { CommentsectionComponent } from './components/blogpost-components/commen
 import { FooterComponent } from './components/general-components/footer/footer.component';
 import { ModalComponent } from './components/general-components/modal/modal.component';
 import { LogaComponent } from './components/general-components/loga/loga.component';
+import { LikeBtnsComponent } from './components/blogpost-components/like-btns/like-btns.component';
+import { RenderCommentsComponent } from './components/blogpost-components/render-comments/render-comments.component';
+import { ButtonComponent } from './components/general-components/button/button.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +34,10 @@ import { LogaComponent } from './components/general-components/loga/loga.compone
     CommentsectionComponent,
     FooterComponent,
     ModalComponent,
-    LogaComponent
+    LogaComponent,
+    LikeBtnsComponent,
+    RenderCommentsComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,

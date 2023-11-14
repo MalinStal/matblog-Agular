@@ -1,5 +1,5 @@
  
- # brach test2
+ # branch main
  # Blogg Planering uppgift 2
 
 Vill göra en matblogg som jag kan använda hemma till köket. den ska ha olika kategorier inom matlagning samt en sida med tips på frukost, mellanmål samt recept /möjlighet att lägga in nya recept 

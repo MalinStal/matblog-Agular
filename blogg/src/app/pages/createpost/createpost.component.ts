@@ -63,6 +63,14 @@ export class CreatepostComponent {
        steps: "",
       })
     }
+    get listOfComments() : FormArray {
+      return this.addRecipe.get("cooking") as FormArray
+    }
+    newComment(): FormGroup {
+      return this.fb.group({
+       comment: "",
+      })
+    }
 
     addItem(list : any, item :any) {
       list.push(item)
