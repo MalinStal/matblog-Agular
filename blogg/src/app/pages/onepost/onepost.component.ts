@@ -13,10 +13,7 @@ export class OnepostComponent {
   //connected to the params
   id: string = '';
   nav: any = ''; // används denna till nåt???
-
-  //for the ngmodel
-  newComment: string = '';
-  list = this.blogService.blogPostList;
+ 
 
   constructor(
     private blogService: BlogpostsService,
@@ -36,7 +33,26 @@ export class OnepostComponent {
     return this.blogService.blogPostList.find(
       (all) => all.id === parseInt(this.id)
     );
+  }  
+  //for the ngmodel
+ newInputValue: any = "";
+  list = this.blogService.blogPostList;
+
+  addNewComment(event : Event) {
+    this.newInputValue = event;
+    this.post?.comments.unshift(this.newInputValue);
+    this.newInputValue = '';
+    this.localStorageService.SavePost(this.list);
+    console.log(this.post?.comments)
   }
+  addComment() {
+    this.post?.comments.unshift(this.newInputValue);
+    this.newInputValue = '';
+    this.localStorageService.SavePost(this.list);
+    console.log(this.post?.comments)
+  }
+
+ 
 
   // function för comments and like btns
   like(): void | undefined {
@@ -56,16 +72,11 @@ export class OnepostComponent {
     this.localStorageService.SavePost(this.list);
   }
 
-  
-  addComment() {
-    this.post?.comments.unshift();
-    this.newComment = '';
-    this.localStorageService.SavePost(this.list);
-    console.log(this.post?.comments)
-  }
+
 
   indexet(i: number): number {
     let index = i + 1;
     return index;
   }
+  
 }

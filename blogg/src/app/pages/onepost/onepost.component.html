@@ -19,7 +19,7 @@
     </div>
 
     <ul class="text-center" *ngFor="let item of post.cooking; let i = index">
-      <li *ngIf="item.measure; else justSteps">{{ item?.steps }}</li>
+      <li *ngIf="item.steps; else justSteps">{{ item?.steps }}</li>
       <ng-template #justSteps>
         <li>{{ indexet(i) }}. {{ item }}</li>
       </ng-template>
@@ -29,13 +29,14 @@
   </section>
 
   <section class="felx felx-col text-white text-center">
-    <commentsection
-      [addNewComment]="newComment"
-      (Comment)="addComment()"
-      [post]="post"
-      (like)="like()"
-      (disLike)="disLike()"
-    ></commentsection>
+
+
+  <like-btns  [post]="post"
+  (like)="like()"
+  (disLike)="disLike()"></like-btns>
+  <comment-input (callParent)="addNewComment($event)"></comment-input>
+  <app-render-comments [post]="post"></app-render-comments>
+   
     <app-button
     (onclick)="navigateHome()">
       Back To Home

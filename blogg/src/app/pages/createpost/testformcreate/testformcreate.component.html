@@ -1,0 +1,76 @@
+<main class="flex justify-center ">
+    <form
+      [formGroup]="addRecipe"
+      (ngSubmit)="onSubmit()"
+      class="flex flex-col"
+      
+    >
+    <div class="">
+      <label for="" class="mt-10"> Add a title</label>
+      <input type="text" formControlName="title" formControlName="title" />
+      <label for=""> Add recipe description</label>
+      <textarea
+        name=""
+        id=""
+        cols="30"
+        rows="10"
+        formControlName="aboutRecipe"
+      ></textarea>
+    </div>
+      <div class="col-span-2 ">
+        <div formArrayName="ingredientsList" class="flex flex-wrap">
+          <div *ngFor="let item of listOfIngredients.controls; let i = index" >
+            <div [formGroupName]="i" >
+              <div class="flex flex-col p-2">
+              mängd och mått enhet: <input type="text" formControlName="measure" />
+              ingrediens : <input type="text" formControlName="ingredient" />
+              <button (click)="removeItem(this.listOfIngredients, i)">remove</button></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button class="col-span-2" type="button" (click)="addItem(this.listOfIngredients, this.newIngredient())">
+        lägg till fler ingredienser</button
+      ><br />
+  
+      <div class="col-span-2 ">
+        <div formArrayName="cooking">
+          <div *ngFor="let item of listOfCooking.controls; let i = index">
+            <div [formGroupName]="i">
+              steg för steg
+  
+              <input type="text" formControlName="steps" class="w-60"/>
+  
+              <button (click)="removeItem(this.listOfCooking, i)">remove</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <button type="button" (click)="addItem(this.listOfCooking, this.newCooking())">lägg till instruktion</button
+      ><br />
+  <div class="grid-span-1">
+      <select name="" id="" formControlName="category">
+        <option value=""></option>
+        <option *ngFor="let item of category; let i = index" value="{{ item }}">
+          {{ item }}
+        </option>
+      </select>
+  
+      
+        <select name="" formControlName="subCategory" *ngIf="category[0]">
+          <option *ngFor="let item of matCategory" value="{{ item }}">
+            {{ item }}
+          </option>
+          <option *ngFor="let item of bakCategory" value="{{ item }}">
+            {{ item }}
+          </option>
+        </select>
+      </div>
+      <div>läg till 1 bild 
+        <input type="text" formControlName="thumbnailUrl" placeholder="ladda upp en URL länk">
+      </div>
+      <button>Add new recipe</button>
+    </form>
+  </main>
+  
+  <input type="text"> <button>add</button>

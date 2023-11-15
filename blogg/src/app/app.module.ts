@@ -12,13 +12,14 @@ import { CreatepostComponent } from './pages/createpost/createpost.component';
 import { FormComponent } from './components/general-components/form/form.component';
 import { HeaderComponent } from './components/general-components/header/header.component';
 import { AddminhomepageComponent } from './addminhomepage/addminhomepage.component';
-import { CommentsectionComponent } from './components/blogpost-components/commentsection/commentsection.component';
 import { FooterComponent } from './components/general-components/footer/footer.component';
 import { ModalComponent } from './components/general-components/modal/modal.component';
 import { LogaComponent } from './components/general-components/loga/loga.component';
 import { LikeBtnsComponent } from './components/blogpost-components/like-btns/like-btns.component';
 import { RenderCommentsComponent } from './components/blogpost-components/render-comments/render-comments.component';
 import { ButtonComponent } from './components/general-components/button/button.component';
+import { TestformcreateComponent } from './pages/createpost/testformcreate/testformcreate.component';
+import { CommentInputComponent } from './components/blogpost-components/comment-input/comment-input.component';
 
 @NgModule({
   declarations: [
@@ -31,13 +32,14 @@ import { ButtonComponent } from './components/general-components/button/button.c
     FormComponent,
     HeaderComponent,
     AddminhomepageComponent,
-    CommentsectionComponent,
     FooterComponent,
     ModalComponent,
     LogaComponent,
     LikeBtnsComponent,
     RenderCommentsComponent,
-    ButtonComponent
+    ButtonComponent,
+    TestformcreateComponent,
+    CommentInputComponent
   ],
   imports: [
     BrowserModule,

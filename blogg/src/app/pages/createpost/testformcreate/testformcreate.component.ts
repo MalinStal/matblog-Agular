@@ -1,16 +1,16 @@
+
 import { Component } from '@angular/core';
 import { FormArray, FormControl, FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { BlogpostsService } from 'src/app/service/blogposts.service';
 import { Blogs } from 'src/app/service/class/blogs';
 import { DateService } from 'src/app/service/date.service';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
-
 @Component({
-  selector: 'app-createpost',
-  templateUrl: './createpost.component.html',
-  styleUrls: ['./createpost.component.css']
+  selector: 'app-testformcreate',
+  templateUrl: './testformcreate.component.html',
+  styleUrls: ['./testformcreate.component.css']
 })
-export class CreatepostComponent {
+export class TestformcreateComponent {
 // for rendering and using the category list from blogpost service 
   category = this.blogpostService.categorys;
   bakCategory = this.blogpostService.BakCategorys;
@@ -27,7 +27,7 @@ export class CreatepostComponent {
   constructor(private blogpostService : BlogpostsService, private fb : FormBuilder, private dateService: DateService, private localstorageService : LocalstorageService) {
     
     this.addRecipe = this.fb.group({
-    
+      id : Math.floor(Math.random() * 100),
       title: new FormControl('', Validators.required),
     thumbnailUrl:new FormControl('', ),
     aboutRecipe: new FormControl('', ),
@@ -35,6 +35,12 @@ export class CreatepostComponent {
     cooking: this.fb.array([]) ,
     category: new FormControl(''),
     subCategory: new FormControl(''),
+    currentDate: this.dateService.getDate(),
+    likes: 0,
+    dislikes: 0,
+    Comments : this.fb.array([this.fb.control("")]),
+
+      
     });
   
   }
@@ -76,10 +82,7 @@ export class CreatepostComponent {
     onSubmit() {
       let formValue = this.addRecipe.value
       console.log(formValue);
-      this.list.unshift({...formValue, id: Math.floor(Math.random() * 100), 
-        currentDate : this.dateService.getDate(), 
-        likes : 0, 
-        dislikes : 0 , comments : [] }as Blogs)
+      this.list.unshift(formValue as Blogs)
       this.addRecipe.reset()
       this.localstorageService.SavePost(this.list)
     }
