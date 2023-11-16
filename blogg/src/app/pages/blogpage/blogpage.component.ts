@@ -8,21 +8,6 @@ import { LocalstorageService } from 'src/app/service/localstorage.service';
   templateUrl: './blogpage.component.html',
   styleUrls: ['./blogpage.component.css'],
 })
-export class BlogpageComponent implements OnInit {
-  constructor(
-    private blogService: BlogpostsService,
-    private localStorageService: LocalstorageService
-  ) {}
-  ngOnInit(): void {
-  
-  }
+export class BlogpageComponent  {
 
-  get blogpost() {
-    let localStorageArray = this.localStorageService.getAllPost();
-    let blogArray = this.blogService.blogPostList;
-    if (localStorageArray === null) {
-      return blogArray;
-    }
-    return this.localStorageService.getAllPost();
-  }
 }

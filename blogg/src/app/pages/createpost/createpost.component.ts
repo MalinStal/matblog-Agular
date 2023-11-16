@@ -29,12 +29,12 @@ export class CreatepostComponent {
     this.addRecipe = this.fb.group({
     
       title: new FormControl('', Validators.required),
-    thumbnailUrl:new FormControl('', ),
-    aboutRecipe: new FormControl('', ),
-    ingredientsList: this.fb.array([]) ,
-    cooking: this.fb.array([]) ,
-    category: new FormControl(''),
-    subCategory: new FormControl(''),
+    thumbnailUrl:new FormControl('', Validators.required),
+    aboutRecipe: new FormControl('', Validators.required),
+    ingredientsList: this.fb.array([], Validators.required) ,
+    cooking: this.fb.array([], Validators.required) ,
+    category: new FormControl('',Validators.required),
+    subCategory: new FormControl('',Validators.required),
     });
   
   }
@@ -68,7 +68,7 @@ export class CreatepostComponent {
 
     addItem(list : any, item :any) {
       list.push(item)
-      console.log(this.addRecipe.value);
+
     }
     removeItem( list : any, i : number) {
       list.removeAt(i)
@@ -86,6 +86,27 @@ export class CreatepostComponent {
     indexet(i: number): number {
       let index = i + 1;
       return index;
+
+    }
+    imgPreview : string |ArrayBuffer|null | undefined = undefined;
+
+    selectedFile : File |null = null;
+
+    onFileSelected(event : any) {
+      const file : File = event?.target.files[0];
+      this.selectedFile = file;
+      this.previewTheImage()
+
+    }
+    previewTheImage(){
+      if(this.selectedFile){
+        const reader = new FileReader();
+
+        reader.onload = (e) => {
+          this.imgPreview  =e.target?.result;
+        }
+        reader.readAsDataURL(this.selectedFile);
+      }
     }
     // koden nedanför va till en evenutell filhantering av bilder med input type file men funkade inte 
     // url : any = ""

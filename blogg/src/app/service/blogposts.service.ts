@@ -110,6 +110,20 @@ export class BlogpostsService {
       0,
       ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa höst rätten"]
     ),
+    new Blogs(
+      5, 
+      'Bröd',
+      'assets/images/bröd.jpg',
+      "bröd",
+      [],
+      [],
+      this.categorys[0],
+      this.MatCategorys[5],
+      this.randomDate,
+      334, 
+      0,
+      ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa brödet"]
+    ),
   ];
 
  

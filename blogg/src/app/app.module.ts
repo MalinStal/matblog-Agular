@@ -20,6 +20,9 @@ import { RenderCommentsComponent } from './components/blogpost-components/render
 import { ButtonComponent } from './components/general-components/button/button.component';
 
 import { CommentInputComponent } from './components/blogpost-components/comment-input/comment-input.component';
+import { RenderBlogsComponent } from './components/blogpost-components/render-blogs/render-blogs.component';
+import { BloggitemComponent } from './components/blogpost-components/bloggitem/bloggitem.component';
+import { ShowImagesComponent } from './components/general-components/show-images/show-images.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { CommentInputComponent } from './components/blogpost-components/comment-
     RenderCommentsComponent,
     ButtonComponent,
  
-    CommentInputComponent
+    CommentInputComponent,
+      RenderBlogsComponent,
+      BloggitemComponent,
+      ShowImagesComponent
   ],
   imports: [
     BrowserModule,

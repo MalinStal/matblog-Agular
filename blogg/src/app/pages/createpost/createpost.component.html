@@ -12,8 +12,8 @@
       <input
         type="text"
         formControlName="title"
-        
-        class="p-1 border-1 border-white bg-gree-500 text-3xl w-3/5"
+        required
+        class="p-1 border-1 border-white bg-gree-500 text-3xl text-black w-3/5 required:border-red-500"
       />
     </section>
 
@@ -25,26 +25,33 @@
         cols="30"
         rows="10"
         formControlName="aboutRecipe"
+        class="text-black"
+   
       ></textarea>
     </section>
 
-    <section class="col-span-1 row-start-2 p-5">
-      <div class="p-2 mb-5">
-        <span class="text-xl"> läg till 1 bild: </span>
+    <section class="col-span-1 row-start-2 p-2">
+     <span class="text-xl"> läg till 1 bild: </span> 
+     <div class="p-2 mb-5 flex">
+        
         <input
           type="text"
-          formControlName="thumbnailUrl"
+          required
+         formControlName="thumbnailUrl"
           placeholder="ladda upp en URL länk"
-          class="w-3/5 p-1 text-slate-500"
+          class="w-3/5 h-6 p-1 text-slate-600 "
+          #img
         />
+        <img [src]="img.value" alt="selected image" class="ml-4 bg-white text-black w-20 h-20 text-center"/>
+        
       </div>
 
-      <div class="flex flex-col p-5 gap-5 border-2 border-white border-solid">
+      <div class="flex flex-col p-2 gap-2">
         <span class="text-m"> Kategori</span>
-        <select name="" id="" formControlName="category">
+        <select name="" id="" formControlName="category" class="w-2/5">
           <option value=""></option>
           <option
-            class="text-xl"
+            class="text-xl text-black "
             *ngFor="let item of category; let i = index"
             value="{{ item }}"
           >
@@ -56,7 +63,7 @@
           name=""
           formControlName="subCategory"
           *ngIf="category[0]"
-          class="text-xl"
+          class="text-xl text-black w-2/5"
         >
           <option *ngFor="let item of matCategory" value="{{ item }}">
             {{ item }}
@@ -83,8 +90,9 @@
               <div class="flex flex-col p-2 ">
                 ingrediens {{ indexet(i) }}: <br />
                 mängd och mått enhet:
-                <input type="text" formControlName="measure" /> ingrediens :
-                <input type="text" formControlName="ingredient" />
+                <input type="text"  formControlName="measure" class="text-black required:border-red-500"/> 
+                ingrediens :
+                <input type="text"  required formControlName="ingredient" class="text-black required:border-red-500"/>
                 <app-button (onclick)="removeItem(this.listOfIngredients, i)">
                   remove
                 </app-button>
@@ -107,7 +115,7 @@
             <div [formGroupName]="i">
               steg {{ indexet(i) }}
 
-              <input type="text" formControlName="steps" class="w-3/5" />
+              <input type="text" required formControlName="steps" class="w-3/5 text-black required:border-red-500" />
 
               <app-button 
               (click)="removeItem(this.listOfCooking, i)"

@@ -51,8 +51,8 @@ comments: string[];
 
     _Style_
     använd tailwind för CSS 
-    loga görte i canva 
-    färgtema grönt 
+    loga gört i canva 
+    färgtema grönt är skönt 
     enkelt 
 _TODO_
 
@@ -110,11 +110,11 @@ status : klar !
 
 status : nästan klart , kan lägga till kommetnarer och gilla men det uppdateras inte/sparas inte i local storage 
 
-# FORTSÄTT HÄR! 
+
 18.gör de möjligt att lägga till bild i blogg posten
    - lägg in med URL status : klar! 
-   - lägg in med input type file status : provar mig fram men har nu viktigare saker att preoritera
 
+# FORTSÄTT HÄR! 
 19.skriv om koden till mindre komponenter
    - create post : här vill jag få en service för all funktionalitet samt mindre komponenter och mer återanvänding i koden.   
    - one post : mindre kompoenenter
@@ -132,3 +132,5 @@ status : nästan klart , kan lägga till kommetnarer och gilla men det uppdatera
 - laggar om man försöker göra en output till logo komponenten för routing 
 - går ej att skriva commentarer i nya blogpost... behöver kanske göra om till en formarray som ingredienserna eller något liknande?? 
 
+FIXA DETTA FÖRST!!! 
+- när man lägger till nya ingrediense på sparas ett nytt recept varej gång så där är något väldgt fel! kolla detta först imorgon och lös det! 
