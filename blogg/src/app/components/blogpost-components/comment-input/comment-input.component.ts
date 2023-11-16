@@ -7,8 +7,10 @@ import { Component, EventEmitter, Output } from '@angular/core';
 })
 export class CommentInputComponent {
   @Output() message = new EventEmitter();
-  defaultValue = " from child";
+  defaultValue = "skriv här...";
 
-  msgToParent() {this.message.emit(this.defaultValue);}
+  addNewComment() {
+    this.message.emit(this.defaultValue);
+  }
   
 }

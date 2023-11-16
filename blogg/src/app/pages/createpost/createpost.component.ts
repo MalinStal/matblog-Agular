@@ -83,7 +83,10 @@ export class CreatepostComponent {
       this.addRecipe.reset()
       this.localstorageService.SavePost(this.list)
     }
-
+    indexet(i: number): number {
+      let index = i + 1;
+      return index;
+    }
     // koden nedanför va till en evenutell filhantering av bilder med input type file men funkade inte 
     // url : any = ""
     // file(event : any) {

@@ -18,7 +18,7 @@ import { LogaComponent } from './components/general-components/loga/loga.compone
 import { LikeBtnsComponent } from './components/blogpost-components/like-btns/like-btns.component';
 import { RenderCommentsComponent } from './components/blogpost-components/render-comments/render-comments.component';
 import { ButtonComponent } from './components/general-components/button/button.component';
-import { TestformcreateComponent } from './pages/createpost/testformcreate/testformcreate.component';
+
 import { CommentInputComponent } from './components/blogpost-components/comment-input/comment-input.component';
 
 @NgModule({
@@ -38,7 +38,7 @@ import { CommentInputComponent } from './components/blogpost-components/comment-
     LikeBtnsComponent,
     RenderCommentsComponent,
     ButtonComponent,
-    TestformcreateComponent,
+ 
     CommentInputComponent
   ],
   imports: [
