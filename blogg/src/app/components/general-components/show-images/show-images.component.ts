@@ -1,4 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { BlogpostsService } from 'src/app/service/blogposts.service';
+import { Blogs } from 'src/app/service/class/blogs';
 
 @Component({
   selector: 'app-show-images',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class ShowImagesComponent {
 
+  constructor(private blogpostService : BlogpostsService){}
+get post() {
+   return this.blogpostService.blogPostList
+}
+ 
 }

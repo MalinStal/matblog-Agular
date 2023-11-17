@@ -1,4 +1,3 @@
-import { DateService } from "../date.service";
 export class Blogs {
     id: number;
     title: string;
@@ -42,7 +41,3 @@ export class Blogs {
     }
 }
  
-interface ingrediens{
-    measure : number;
-    ingredient : any;
-}

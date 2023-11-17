@@ -128,9 +128,14 @@ status : nästan klart , kan lägga till kommetnarer och gilla men det uppdatera
 ## buggar/saker att fixa 
 
 - när man lägger till nya grejer i createpost så förstoras inte formuläret utan saker läger sig utanför diven och under footern
+Detta är löst med annan CSS lösning
+
 - blir ett sträck som att man skulle kunna skriva något i header länkarna lite random på isdan ibland ??
-- laggar om man försöker göra en output till logo komponenten för routing 
+
 - går ej att skriva commentarer i nya blogpost... behöver kanske göra om till en formarray som ingredienserna eller något liknande?? 
 
-FIXA DETTA FÖRST!!! 
+localstorage går inte att rendera ut posten ifall man uppdaterar sidan. Får 404 error meddelanden. vet inte varför . listan i localstorage skrivs över om man gör nya post? 
+
+FIXAT
 - när man lägger till nya ingrediense på sparas ett nytt recept varej gång så där är något väldgt fel! kolla detta först imorgon och lös det! 
+Klart med detta! behövde sätta alla form controlls to null as a start and create a if statement in the submit function for the submition not to render whitout everything in the form was finished.

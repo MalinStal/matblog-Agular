@@ -11,6 +11,7 @@ export class BlogpostsService {
   BakCategorys : string[] = ["tårta", "kaka", "bulle", "bröd", "efterrätt", "övrigt"]
   MatCategorys : string[] = ["soppa", "gryta", "pastarätt", "huvudrätt", "förrätt", "picknick", "frukost"]
 
+  
   hideimg : boolean = false;
   constructor(private dateService : DateService, ) {}
   
@@ -88,7 +89,7 @@ export class BlogpostsService {
       ['super gott recept', 'helt fantastiskt!', "bättre än klassiska piroger"]
     ),
     new Blogs(
-      4, 
+      3, 
       'pumpasoppa',
       'assets/images/pumpasopa.jpg',
       'En varm och krämig pumpasoppa med rostade pumpakärnor. En härlig och lättlagad höstmiddag! Servera med en bit gott bröd. Till detta serverar vi mousserande vin. Strukturerna i en mixad soppa gifter sig med bubblorna i vinet.',
@@ -103,24 +104,38 @@ export class BlogpostsService {
       '2 dl crème fraîche',
       '1 dl matlagningsgrädde',],
       ['1. Finhacka gul lök och fräs i kastrull med smör och vitlök.', '2. Skala pumpan och gröp ur kärnorna (spara dem till att rosta). Skär pumpan i mindre bitar.', '3. Tillsätt pumpaskivorna i kastrullen och stek under omrörning. Rör ner grönsaksfond, kryddor och vatten och  låt koka i cirka 20 minuter.','4. Ha i crème fraîche och matlagningsgrädde och mixa slätt med stavmixer. Servera med en bit bröd!'],
-      this.categorys[0],
-      this.MatCategorys[5],
+      this.categorys[1],
+      this.BakCategorys[5],
       this.randomDate,
       334, 
       0,
       ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa höst rätten"]
     ),
     new Blogs(
-      5, 
+      4, 
       'Bröd',
       'assets/images/bröd.jpg',
       "bröd",
       [],
       [],
-      this.categorys[0],
-      this.MatCategorys[5],
+      this.categorys[1],
+      this.MatCategorys[3],
       this.randomDate,
-      334, 
+      354, 
+      0,
+      ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa brödet"]
+    ),
+    new Blogs(
+      5, 
+      'pannkaka',
+      'assets/images/pannkaka',
+      "pannkaka är gött",
+      ["3 ägg", "3 dl mjöl", "6 dl mjölk"],
+      ["vispa", "stek", "ät"],
+      this.categorys[0],
+      this.MatCategorys[6],
+      this.randomDate,
+      354, 
       0,
       ['super gott recept', 'helt fantastiskt!, la även till lite ingefära', "bästa brödet"]
     ),

@@ -12,8 +12,10 @@ import { LocalstorageService } from 'src/app/service/localstorage.service';
 export class OnepostComponent {
   //connected to the params
   id: string = '';
-  nav: any = ''; // används denna till nåt???
- 
+
+ //for the ngmodel
+ newInputValue: any = "";
+  list =this.blogService.blogPostList;
 
   constructor(
     private blogService: BlogpostsService,
@@ -24,37 +26,29 @@ export class OnepostComponent {
     postId.params.subscribe((params) => (this.id = params['id']));
   }
 
-  navigateHome() {
-    this.route.navigate(['/']);
-    console.log(this.route)
-  }
+ 
   // to get one blog posts. find metod to search for the post whit a special id
   get post(): Blogs | undefined {
     return this.blogService.blogPostList.find(
       (all) => all.id === parseInt(this.id)
     );
   }  
-  //for the ngmodel
- newInputValue: any = "";
-  list = this.blogService.blogPostList;
-
+ // sending the event to the value and push it to the start of the list of comments and clear the inputfield
   addNewComment(event : Event) {
     this.newInputValue = event;
     this.post?.comments.unshift(this.newInputValue);
     this.newInputValue = '';
     this.localStorageService.SavePost(this.list);
-    console.log(this.post?.comments)
-  }
-  addComment() {
-    this.post?.comments.unshift(this.newInputValue);
-    this.newInputValue = '';
-    this.localStorageService.SavePost(this.list);
-    console.log(this.post?.comments)
+    
   }
 
- 
+  //REMOVE post from locla sotrage but it dusent work as expected at this time
+//   removePost(){
+//     this.localStorageService.removePost(this.list, parseInt(this.id) )
+//   }
+// //  
 
-  // function för comments and like btns
+  //if we can find the post like increase whit 1 and save the chanfe to local storage 
   like(): void | undefined {
     if (this.post == undefined) {
       return;
@@ -64,6 +58,7 @@ export class OnepostComponent {
       
     }
   }
+  //if we can find the post dislike decrease whit 1 and save the chanfe to local storage 
   disLike(): void | undefined {
     if (this.post == undefined) {
       return;
@@ -73,10 +68,14 @@ export class OnepostComponent {
   }
 
 
-
+  // to write out listitem in order of the index whit 1 insted of 0 
   indexet(i: number): number {
     let index = i + 1;
     return index;
   }
-  
+  //Going back to home page
+   navigateHome() {
+    this.route.navigate(['/']);
+    
+  }
 }
