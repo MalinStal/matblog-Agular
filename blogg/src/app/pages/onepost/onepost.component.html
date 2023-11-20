@@ -36,14 +36,15 @@
       <span>Upplagt: {{ post.currentDate }}</span>
     </div>
 
-    <!-- <button (click)="removePost()"> ta bort recept från bloggen</button> -->
+  
   </section>
-
+   <app-button *ngIf="hide == true " (click)="removePost()" class="bg-emerald-700 text-white"
+     > ta bort recept från bloggen</app-button> 
   <section class="felx felx-col text-white text-center">
     <like-btns [post]="post" (like)="like()" (disLike)="disLike()"></like-btns>
     <comment-input (message)="addNewComment($event)"></comment-input>
     <app-render-comments [post]="post"></app-render-comments>
-    <app-button (onclick)="navigateHome()"> Back To Home </app-button>
+    <app-button (onclick)="navigateHome()" class="bg-emerald-700 text-white"> Back To Home </app-button>
   </section>
 
 <div *ngIf="!post" class="text-3xl text-center">

@@ -81,23 +81,23 @@ status : klar!
 7.   kunna öppna en blog om man klickar på den 
 status : klart !
 
-8.   se information om bloginläget och kunna navigera tillbaka till home
+8.   se information om blogginlägget och kunna navigera tillbaka till home
       status : klar 
 9.   kunna gilla och ogilla varje enskild post
 
 10.  kunna lägga till en post
-status : bara ritat ut hur det kan se ut. Saknas functionalitet och eventuellt att det ska vara upplagrt på ett annat sätt ? fundera på saken
+status : klar!
 
 11.lada ner tailwind CSS status :klar! 
 
 12. lada ner maticons for like button i home komponenten 
- status :klar! men funger ej av någon anledning? nu funkar det. behövde läga en länk i index.html för att det skulle funka
+ status :klar! men funger ej av någon anledning? nu funkar det. behövde lägga en länk i index.html för att det skulle funka
 
- 13.skapa kontakt formulär till about sidan som ska rendera ut meddeladnet i consolen.
+ 13.skapa kontakt formulär till about sidan som ska rendera ut meddelandet i consolen.
  status : klar
 
 14. se över all kod så att det som är på hemsidan står på svenska! 
- status pågår!
+ status klar!
 
 15.skapa funktionalitet till createPost med formGroup och puscha till listan  i blogs.
 status klar!
@@ -108,7 +108,7 @@ status : klar !
 
 17. se till att man kan gilla och lägga till nya kommentarer
 
-status : nästan klart , kan lägga till kommetnarer och gilla men det uppdateras inte/sparas inte i local storage 
+status : klar! 
 
 
 18.gör de möjligt att lägga till bild i blogg posten
@@ -117,14 +117,12 @@ status : nästan klart , kan lägga till kommetnarer och gilla men det uppdatera
 # FORTSÄTT HÄR! 
 19.skriv om koden till mindre komponenter
    - create post : här vill jag få en service för all funktionalitet samt mindre komponenter och mer återanvänding i koden.   
-   - one post : mindre kompoenenter
+   Status : valt att inte läga mer tid på detta istället läga till lite andra funktioner som kan vara bra på en sida. 
+   - hamburger meny
+   - scroll navbar
+   - 
 
-20. Om tid finns skapa en remove knap till admin blog sidan som gör det möjligt att ta bort en post. använd samma boolean som i header addpost knappen. 
-
-21. Om tid finns vill jag ha snyggare/ mer användar vänlig design på sidan, gärna mer grids tänk och öva det med tailwind cssen . 
-
-
-
+20. 
 ## buggar/saker att fixa 
 
 - när man lägger till nya grejer i createpost så förstoras inte formuläret utan saker läger sig utanför diven och under footern

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DateService } from 'src/app/service/date.service';
 
 @Component({
@@ -6,11 +6,19 @@ import { DateService } from 'src/app/service/date.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent {
-  cheesecake : string = "assets/images/cheesecake.jpg"
+export class HomeComponent implements OnInit{
+
 constructor(
   private dateService : DateService
 ){}
+
+//render time and date in the end of the home page
+ngOnInit(){
+  
+  setInterval(() => {
+   this.time
+  }, 1000)
+}
 get time(){
   return this.dateService.getTime()
 }

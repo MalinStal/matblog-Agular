@@ -15,12 +15,13 @@ export class LocalstorageService {
   SavePost( item: Blogs[]) : void{
     localStorage.setItem("post", JSON.stringify(item));
   }
+
+
+  
   removePost(list : Blogs[], id : number)   {
-    
-    let newList = list.filter((all)=> all.id !== id)
-    console.log(newList)
-    return newList
-   
+    list = list.filter((all)=> all.id !== id)
+    this.SavePost(list)
+
   }
 
 }

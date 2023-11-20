@@ -17,6 +17,7 @@
     .navbar-logo {
     display: flex;
     align-items: center;
+    
     a {
     display: inherit;
     }

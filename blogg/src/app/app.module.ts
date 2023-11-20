@@ -11,9 +11,7 @@ import { OnepostComponent } from './pages/onepost/onepost.component';
 import { CreatepostComponent } from './pages/createpost/createpost.component';
 import { FormComponent } from './components/general-components/form/form.component';
 import { HeaderComponent } from './components/general-components/header/header.component';
-import { AddminhomepageComponent } from './addminhomepage/addminhomepage.component';
 import { FooterComponent } from './components/general-components/footer/footer.component';
-import { ModalComponent } from './components/general-components/modal/modal.component';
 import { LogaComponent } from './components/general-components/loga/loga.component';
 import { LikeBtnsComponent } from './components/blogpost-components/like-btns/like-btns.component';
 import { RenderCommentsComponent } from './components/blogpost-components/render-comments/render-comments.component';
@@ -34,18 +32,17 @@ import { ShowImagesComponent } from './components/general-components/show-images
     CreatepostComponent,
     FormComponent,
     HeaderComponent,
-    AddminhomepageComponent,
     FooterComponent,
-    ModalComponent,
+    
     LogaComponent,
     LikeBtnsComponent,
     RenderCommentsComponent,
     ButtonComponent,
- 
     CommentInputComponent,
-      RenderBlogsComponent,
-      BloggitemComponent,
-      ShowImagesComponent
+    RenderBlogsComponent,
+    BloggitemComponent,
+    ShowImagesComponent,
+
   ],
   imports: [
     BrowserModule,

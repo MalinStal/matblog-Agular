@@ -1,58 +1,53 @@
-<header class="bg-emerald-700 flex justify-between text-white items-center navbar" [ngClass]="{'navbar-fixed' : isFixedNavbar}">
-  <app-loga></app-loga>
-   <div  class="navbar-mobile-top">
-    <button class="navbar-toggle mat-icon mr-10" (click)="toggleNavbar()"><mat-icon>{{!navbarOpened ? 'menu' : 'close'}}</mat-icon></button>
+<header
+  class="bg-emerald-700 flex justify-between text-white items-center navbar"
+  [ngClass]="{ 'navbar-fixed': isFixedNavbar }"
+>
+  <app-loga (onClick)="navigateHome()"></app-loga>
+  <div class="navbar-mobile-top">
+    <button class="navbar-toggle mat-icon mr-10" (click)="toggleNavbar()">
+      <mat-icon>{{ !navbarOpened ? "menu" : "close" }}</mat-icon>
+    </button>
   </div>
   <nav class="flex top-navbar">
-    <ul class="flex space-x-3.5 text-center navbar-ul" >
+    <ul class="flex space-x-3.5 text-center navbar-ul">
       <li
-        class=" navbartop-btn text-xl p-5 cursor-pointer hover:scale-125 ease-out duration-300"
+        class="navbartop-btn text-xl p-5 cursor-pointer hover:scale-125 ease-out duration-300"
         routerLink=""
-        (click)="toggleNavbar()"
-      >
+        (click)="toggleNavbar()">
         Hem
       </li>
       <li
         class="navbartop-btn text-xl p-5 cursor-pointer hover:scale-125 ease-out duration-300"
         routerLink="/about"
-        (click)="toggleNavbar()"
-      >
+        (click)="toggleNavbar()">
         Om mig
       </li>
       <li
         class="navbartop-btn text-xl p-5 cursor-pointer hover:scale-125 ease-out duration-300"
         routerLink="/blogs"
-        (click)="toggleNavbar()"
-      >
+        (click)="toggleNavbar()">
         blogg
       </li>
       <li
         *ngIf="hide == true"
         class="navbartop-btn text-xl p-5 cursor-pointer"
         routerLink="/addpost"
-        (click)="toggleNavbar()"
-      >
+        (click)="toggleNavbar()">
         nytt Recept
       </li>
-    </ul>  
+    </ul>
 
-  <div class="addminBtn">
-        <button
-    class=" justify-end items-end mr-3"
-    (click)="changeToAdmin()"
-    *ngIf="hide == false; else userPage"
-  >
-    <span>administrera</span>
-   
-  </button>
+    <div class="addminBtn">
+      <button
+        class="justify-end items-end mr-3"
+        (click)="changeToAdmin()"
+        *ngIf="hide == false; else userPage">
+        <span>administrera</span>
+      </button>
 
-  <ng-template #userPage>
-    <button (click)="changeToAdmin()">
-      användare
-    </button></ng-template
-  >
-  </div>
+      <ng-template #userPage>
+        <button (click)="changeToAdmin()">användare</button>
+      </ng-template>
+    </div>
   </nav>
- 
-
 </header>

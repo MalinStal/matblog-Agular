@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { BlogpostsService } from 'src/app/service/blogposts.service';
 import { Blogs } from 'src/app/service/class/blogs';
@@ -9,13 +9,19 @@ import { LocalstorageService } from 'src/app/service/localstorage.service';
   templateUrl: './onepost.component.html',
   styleUrls: ['./onepost.component.css'],
 })
-export class OnepostComponent {
+export class OnepostComponent implements OnInit {
   //connected to the params
   id: string = '';
 
  //for the ngmodel
  newInputValue: any = "";
   list =this.blogService.blogPostList;
+ ngOnInit(): void {
+   this.hide
+ }
+ get hide(){
+  return this.blogService.adminPage
+ }  
 
   constructor(
     private blogService: BlogpostsService,
@@ -24,6 +30,7 @@ export class OnepostComponent {
     private localStorageService: LocalstorageService
   ) {
     postId.params.subscribe((params) => (this.id = params['id']));
+    console.log(this.hide)
   }
 
  
@@ -43,10 +50,11 @@ export class OnepostComponent {
   }
 
   //REMOVE post from locla sotrage but it dusent work as expected at this time
-//   removePost(){
-//     this.localStorageService.removePost(this.list, parseInt(this.id) )
-//   }
-// //  
+  removePost(){
+    this.localStorageService.removePost(this.list, parseInt(this.id) )
+    this.navigateHome()
+  }
+//  
 
   //if we can find the post like increase whit 1 and save the chanfe to local storage 
   like(): void | undefined {

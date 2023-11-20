@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { BlogpostsService } from 'src/app/service/blogposts.service';
-import { LocalstorageService } from 'src/app/service/localstorage.service';
+import { Component } from '@angular/core';
+
 
 @Component({
   selector: 'app-blogpage',

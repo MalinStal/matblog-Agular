@@ -1,19 +1,26 @@
 import { Injectable } from '@angular/core';
 import { Blogs } from './class/blogs';
 import { DateService } from './date.service';
+import { LocalstorageService } from './localstorage.service';
 
 
 @Injectable({
   providedIn: 'root',
 })
 export class BlogpostsService {
+  //arrays whit categorys for the blogpost
   categorys : string[] = ["mat","bak"]
   BakCategorys : string[] = ["tårta", "kaka", "bulle", "bröd", "efterrätt", "övrigt"]
   MatCategorys : string[] = ["soppa", "gryta", "pastarätt", "huvudrätt", "förrätt", "picknick", "frukost"]
 
-  
-  hideimg : boolean = false;
-  constructor(private dateService : DateService, ) {}
+  //boolean for the adminpage changes
+  adminPage : boolean = false;
+
+  constructor(private dateService : DateService, localstorage : LocalstorageService ) {
+    if(localstorage.getAllPost()){
+      this.blogPostList = localstorage.getAllPost()}
+    
+  }
   
   // generate a date for the blogs by random
   get randomDate(){
@@ -22,7 +29,7 @@ export class BlogpostsService {
       new Date(),
     ).toLocaleDateString()
   }
-
+//hard koded posts
   blogPostList: Blogs[] = [
     new Blogs(1,
       'cheesecake',

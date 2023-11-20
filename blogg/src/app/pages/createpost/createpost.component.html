@@ -1,28 +1,26 @@
-<main class="flex  flex-col justify-center items-center bg-white p-10"> 
-  
-  <h3 class="text-3xl text-emerald-800 text-shadow-md">Skapa nytt Recept</h3>
+<main class="flex flex-col justify-center items-center bg-white p-10">
+  <h3 class="text-3xl text-emerald-800 shadow-md">Skapa nytt Recept</h3>
 
   <form
     [formGroup]="addRecipe"
     (ngSubmit)="onSubmit()"
-    class=" pt-10 grid grid-cols-2 gap-4 grid-row-4 text-white border-4 m-5 border-emerald-600 bg-emerald-700 shadow-md shadow-emerald-600"
-    style="width: 80%"
-  >
-   
+    class="pt-10 grid grid-cols-2 gap-4 grid-row-4 text-white border-4 m-5 border-emerald-600 bg-emerald-700 shadow-md shadow-emerald-600"
+    style="width: 80%">
     <section
-      class="col-start-1 col-end-3 row-span-1 text-center items-center p-5"
-    >
-      <label for="" class="mt-10  text-xl">Titel: </label>
+      class="col-start-1 col-end-3 row-span-1 text-center items-center p-5">
+
+      <label for="" class="mt-10 text-xl">Titel: </label>
       <input
         type="text"
         formControlName="title"
         required
-        class="p-1 border-1 border-white bg-gree-500 text-3xl text-black w-3/5 required:border-red-500"
-      />
+        class="p-1 border-1 border-white bg-gree-500 text-3xl text-black w-3/5 required:border-red-500"/>
     </section>
 
     <section class="col-span-1 row-start-2 flex flex-col p-5">
-      <label class="text-xl mb-1 text-center"> Lägg till en beskrivning: </label>
+      <label class="text-xl mb-1 text-center">
+        Lägg till en beskrivning:
+      </label>
       <textarea
         name=""
         id=""
@@ -30,45 +28,40 @@
         rows="10"
         formControlName="aboutRecipe"
         class="text-black"
-   
       ></textarea>
     </section>
 
     <section class="col-span-1 row-start-2 p-2">
-     <span class="text-xl"> läg till 1 bild: </span> 
-     <div class="p-2 mb-5 flex">
-        
+      <span class="text-xl"> läg till 1 bild: </span>
+      <div class="p-2 mb-5 flex">
         <input
           type="text"
           required
-         formControlName="thumbnailUrl"
+          formControlName="thumbnailUrl"
           placeholder="ladda upp en URL länk"
-          class="w-3/5 h-6 p-1 text-slate-600 "
-          #img
-        />
-        <img [src]="img.value" alt="selected image" class="ml-4 bg-white text-black w-20 h-20 text-center"/>
-        
+          class="w-3/5 h-6 p-1 text-slate-600"
+          #img/>
+        <img
+          [src]="img.value"
+          alt="selected image"
+          class="ml-4 bg-white text-black w-20 h-20 text-center"/>
       </div>
 
       <div class="flex flex-col p-2 gap-2">
-        <span class="text-m"> Kategori</span>
-        <select name="" id="" formControlName="category" class="w-2/5">
-          <option value=""></option>
-          <option
-            class="text-xl text-black "
-            *ngFor="let item of category; let i = index"
+        <span class="text-m">Kategori</span>
+        <select
+          formControlName="category"
+          class=" text-xl w-2/5 text-black">
+          <option *ngFor="let item of category; let i = index"
             value="{{ item }}"
-          >
+            class="text-xl text-black">
             {{ item }}
           </option>
         </select>
         <span class="text-m"> sub Kategori</span>
         <select
-          name=""
           formControlName="subCategory"
-          *ngIf="category[0]"
-          class="text-xl text-black w-2/5"
-        >
+          class="text-xl text-black w-2/5">
           <option *ngFor="let item of matCategory" value="{{ item }}">
             {{ item }}
           </option>
@@ -87,17 +80,25 @@
       >
         lägg till fler ingredienser
       </app-button>
-      <div class="col-span-2 ">
+      <div class="col-span-2">
         <div formArrayName="ingredientsList" class="flex flex-wrap">
           <div *ngFor="let item of listOfIngredients.controls; let i = index">
             <div [formGroupName]="i">
-              <div class="flex flex-col p-2 ">
+              <div class="flex flex-col p-2">
                 ingrediens {{ indexet(i) }}: <br />
                 mängd och mått enhet:
-                <input type="text"  formControlName="measure" class="text-black required:border-red-500"/> 
+                <input
+                  type="text"
+                  formControlName="measure"
+                  class="text-black required:border-red-500"/>
                 ingrediens :
-                <input type="text"  required formControlName="ingredient" class="text-black required:border-red-500"/>
-                <app-button (onclick)="removeItem(this.listOfIngredients, i)">
+                <input
+                  type="text"
+                  required
+                  formControlName="ingredient"
+                  class="text-black required:border-red-500"/>
+                <app-button 
+                (onclick)="removeItem(this.listOfIngredients, i)">
                   remove
                 </app-button>
               </div>
@@ -107,33 +108,37 @@
       </div>
     </section>
 
-    <section class="row-start-4 col-start-1 col-end-3 text-center">
+    <section 
+    class="row-start-4 col-start-1 col-end-3 text-center">
       <app-button
         type="button"
-        (click)="addItem(this.listOfCooking, this.newCooking())"
-        >lägg till instruktion</app-button
-      >
+        (click)="addItem(this.listOfCooking, this.newCooking())">
+        lägg till instruktion
+        </app-button>
+
       <div class="col-span-2">
         <div formArrayName="cooking">
           <div *ngFor="let item of listOfCooking.controls; let i = index">
             <div [formGroupName]="i">
               steg {{ indexet(i) }}
 
-              <input type="text" required formControlName="steps" class="w-3/5 text-black required:border-red-500" />
+              <input
+                type="text"
+                required
+                formControlName="steps"
+                class="w-3/5 text-black required:border-red-500"/>
 
-              <app-button 
-              (click)="removeItem(this.listOfCooking, i)"
-              >
+              <app-button (click)="removeItem(this.listOfCooking, i)">
                 remove
-                </app-button>
+              </app-button>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <app-button class="row-start-5 col-start-1 col-end-3 text-center"
-      >Add new recipe</app-button
-    >
+    <app-button class="row-start-5 col-start-1 col-end-3 text-center">
+      Add new recipe
+      </app-button>
   </form>
 </main>

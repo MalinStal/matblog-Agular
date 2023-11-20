@@ -13,5 +13,5 @@ export class ShowImagesComponent {
 get post() {
    return this.blogpostService.blogPostList
 }
- 
+
 }
