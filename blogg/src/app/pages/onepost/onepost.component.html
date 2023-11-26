@@ -1,5 +1,5 @@
 <main class="flex flex-col justify-center items-center">
-  <section *ngIf="post" class="flex flex-col justify-center items-center bg-white p-5 w-4/5">
+  <section *ngIf="post" class="flex flex-col justify-center items-center bg-slate-100 p-5 w-4/5">
     <div class="flex flex-col items-center w-4/5">
       <h2 class="text-3xl p-4 mt-4">{{ post.title }}</h2>
       <img class="" src="{{ post.thumbnailUrl }}" alt="" />
@@ -38,7 +38,7 @@
 
   
   </section>
-   <app-button *ngIf="hide == true " (click)="removePost()" class="bg-emerald-700 text-white"
+   <app-button *ngIf="hide" (click)="removePost()" class="bg-emerald-700 text-white"
      > ta bort recept från bloggen</app-button> 
   <section class="felx felx-col text-white text-center">
     <like-btns [post]="post" (like)="like()" (disLike)="disLike()"></like-btns>

@@ -37,10 +37,10 @@ comments: string[];
  ## BlogPlanering / egna tankar 
   Detta ska bli en matblogg med lite olika recept gällande mat och bak
 
-  fölande saker ska vara med i varej recpet: 
-    title: pankaka
-    thumbnailUrl: bild på pankakor
-    aboutRecipe: Goda pankakor som ska bakas med kärlek och toppas med glas och färska jordgubbar 
+  följande saker ska vara med i varje recept: 
+    title: pannkaka
+    thumbnailUrl: bild på pannkakor
+    aboutRecipe: Goda pannkakor som ska bakas med kärlek och toppas med glass och färska jordgubbar 
     ingredients: [mjölk, ägg, mjöl]
     cooking: blanda alla ingredienser, stek och ät 
     category: mat
@@ -51,14 +51,15 @@ comments: string[];
 
     _Style_
     använd tailwind för CSS 
-    loga gört i canva 
+    loga gört i canva eller copy nåt från nätet 
     färgtema grönt är skönt 
-    enkelt 
+    KISS
+
 _TODO_
 
 1. skapa github repo
 status : klar
-2. skapa alla filer/componenter/services som ska vara med
+2. skapa alla filer/Komponenter/services som ska vara med
 status : klar
 
 3. skapa routes 
@@ -114,26 +115,16 @@ status : klar!
 18.gör de möjligt att lägga till bild i blogg posten
    - lägg in med URL status : klar! 
 
-# FORTSÄTT HÄR! 
 19.skriv om koden till mindre komponenter
    - create post : här vill jag få en service för all funktionalitet samt mindre komponenter och mer återanvänding i koden.   
    Status : valt att inte läga mer tid på detta istället läga till lite andra funktioner som kan vara bra på en sida. 
    - hamburger meny
    - scroll navbar
-   - 
+   - remove item knapp (får ej boolean för onepost att synka med headern? vet ej varför )
+   - showimages grejen är lite fixad med mm 
 
-20. 
-## buggar/saker att fixa 
 
-- när man lägger till nya grejer i createpost så förstoras inte formuläret utan saker läger sig utanför diven och under footern
-Detta är löst med annan CSS lösning
+   Slutsteg: 
 
-- blir ett sträck som att man skulle kunna skriva något i header länkarna lite random på isdan ibland ??
-
-- går ej att skriva commentarer i nya blogpost... behöver kanske göra om till en formarray som ingredienserna eller något liknande?? 
-
-localstorage går inte att rendera ut posten ifall man uppdaterar sidan. Får 404 error meddelanden. vet inte varför . listan i localstorage skrivs över om man gör nya post? 
-
-FIXAT
-- när man lägger till nya ingrediense på sparas ett nytt recept varej gång så där är något väldgt fel! kolla detta först imorgon och lös det! 
-Klart med detta! behövde sätta alla form controlls to null as a start and create a if statement in the submit function for the submition not to render whitout everything in the form was finished.
+   känner mig ganska klar med bloggen, vill få boolena för admin vyn att funka globalt så vi kan ha med remove post knappen på admin onepost. 
+   

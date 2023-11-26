@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { AdminviewService } from 'src/app/service/adminview.service';
 import { BlogpostsService } from 'src/app/service/blogposts.service';
 import { Blogs } from 'src/app/service/class/blogs';
 import { LocalstorageService } from 'src/app/service/localstorage.service';
@@ -17,22 +18,35 @@ export class OnepostComponent implements OnInit {
  newInputValue: any = "";
   list =this.blogService.blogPostList;
  ngOnInit(): void {
-   this.hide
+  this.adminviewService.getBooleanValue().subscribe((value) => {
+    this.hide = value;
+  });
  }
- get hide(){
-  return this.blogService.adminPage
- }  
 
   constructor(
     private blogService: BlogpostsService,
     private postId: ActivatedRoute,
     private route: Router,
-    private localStorageService: LocalstorageService
+    private localStorageService: LocalstorageService,
+    private adminviewService : AdminviewService
   ) {
     postId.params.subscribe((params) => (this.id = params['id']));
-    console.log(this.hide)
+   
   }
-
+  //handeling admin view
+  hide : boolean = false 
+  changeToAdmin(): void {
+    let bool = this.adminviewService.getBooleanValue()
+  
+     this.hide = true;
+    if(this.hide == true){
+     this.adminviewService.changeBoolean(false)
+     this.hide = false;
+     this.route.navigate(['/']);
+     
+    }
+       
+   }
  
   // to get one blog posts. find metod to search for the post whit a special id
   get post(): Blogs | undefined {
@@ -56,7 +70,7 @@ export class OnepostComponent implements OnInit {
   }
 //  
 
-  //if we can find the post like increase whit 1 and save the chanfe to local storage 
+  //if we can find the post like increase whit 1 and save the change to local storage 
   like(): void | undefined {
     if (this.post == undefined) {
       return;

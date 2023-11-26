@@ -4,6 +4,7 @@ import { DateService } from './date.service';
 import { LocalstorageService } from './localstorage.service';
 
 
+
 @Injectable({
   providedIn: 'root',
 })
@@ -12,11 +13,21 @@ export class BlogpostsService {
   categorys : string[] = ["mat","bak"]
   BakCategorys : string[] = ["tårta", "kaka", "bulle", "bröd", "efterrätt", "övrigt"]
   MatCategorys : string[] = ["soppa", "gryta", "pastarätt", "huvudrätt", "förrätt", "picknick", "frukost"]
+    
+  public static  adminPage = false; 
 
   //boolean for the adminpage changes
-  adminPage : boolean = false;
+  changeToAdmin(){
+    
+    //this.adminPage ==!this.adminPage;
+   
+  }
+
+
+ 
 
   constructor(private dateService : DateService, localstorage : LocalstorageService ) {
+
     if(localstorage.getAllPost()){
       this.blogPostList = localstorage.getAllPost()}
     
