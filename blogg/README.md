@@ -1,5 +1,5 @@
  
- # branch main
+
  # Blogg Planering uppgift 2
 
 Vill göra en matblogg som jag kan använda hemma till köket. den ska ha olika kategorier inom matlagning samt en sida med tips på frukost, mellanmål samt recept /möjlighet att lägga in nya recept 
@@ -123,8 +123,10 @@ status : klar!
    - remove item knapp (får ej boolean för onepost att synka med headern? vet ej varför )
    - showimages grejen är lite fixad med mm 
 
+20. skapat en global boolean för att hantera admin view.
 
-   Slutsteg: 
 
-   känner mig ganska klar med bloggen, vill få boolena för admin vyn att funka globalt så vi kan ha med remove post knappen på admin onepost. 
+  # Avslutat projekt! 
+
+
    
